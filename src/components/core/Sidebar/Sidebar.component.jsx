@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import VerticalMenu from '../VerticalMenu';
+import Brand from '../Brand';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
-
-import MenuVertical from '../Menus/Vertical.component';
-
-import './Sidebar.styles.css';
+import { StyledAside, StyledShadowBottom } from './Sidebar.styles';
 
 function Sidebar() {
   const [hover, setHover] = useState(false);
@@ -17,24 +13,18 @@ function Sidebar() {
   };
 
   return (
-    <aside
+    <StyledAside
       onMouseOver={() => toggleHover()}
       onMouseOut={() => toggleHover()}
-      onFocus={() => {}}
-      onBlur={() => {}}
-      className={hover ? 'navbar-aside-container expanded' : 'navbar-aside-container'}
+      expanded={hover}
+      role="menubar"
     >
-      <ul className="navbar-aside-menu header-brand">
-        <li>
-          <Link to="/" className="nav-links">
-            <FontAwesomeIcon icon={faPlay} />
-            <span className="navbar-aside-logo text-truncate">Player</span>
-          </Link>
-        </li>
-      </ul>
-      <div className="shadow-bottom" />
-      <MenuVertical />
-    </aside>
+      <Brand expanded={hover} />
+
+      <StyledShadowBottom />
+
+      <VerticalMenu expanded={hover} />
+    </StyledAside>
   );
 }
 

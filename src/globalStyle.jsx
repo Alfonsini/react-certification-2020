@@ -1,3 +1,8 @@
+import { createGlobalStyle } from 'styled-components';
+import { SKINS } from './utils/constants';
+
+const GlobalStyle = createGlobalStyle`
+
 html {
   font-size: 1.125rem;
   line-height: 1.6;
@@ -17,7 +22,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #020635;
+  background-color: 
+  ${(props) => (props.theme.layout.skin === SKINS.Light ? '#f8f8f8' : '#020635')};
   height: 100vh;
   width: 100vw;
   text-rendering: optimizeLegibility;
@@ -70,3 +76,7 @@ input[type='search']::-webkit-search-results-decoration {
     margin-left: 10px;
   }
 }
+
+
+`;
+export default GlobalStyle;
