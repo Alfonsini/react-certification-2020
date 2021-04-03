@@ -5,11 +5,13 @@ import Navbar from '../core/Navbar';
 
 import Sidebar from '../core/Sidebar';
 
+import Wrapper from '../core/Wrapper';
+
 import AppContent from '../core/AppContent';
 
 import BlankPage from '../core/BlankPage';
 
-import HomePage from '../../pages/Home';
+// import HomePage from '../../pages/Home';
 
 function App() {
   return (
@@ -17,21 +19,21 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Sidebar />
-          <main className="wrapper">
+          <Wrapper>
             <Navbar />
-            <AppContent>
+            {/* <AppContent>
               <HomePage />
-            </AppContent>
-          </main>
+            </AppContent> */}
+          </Wrapper>
         </Route>
         <Route exact path="/not-authorized">
           <Sidebar />
-          <main className="wrapper">
+          <Wrapper>
             <Navbar />
             <AppContent>
               <BlankPage />
             </AppContent>
-          </main>
+          </Wrapper>
         </Route>
       </Switch>
     </BrowserRouter>
