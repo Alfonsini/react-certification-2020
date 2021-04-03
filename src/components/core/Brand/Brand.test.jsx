@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 
 import Brand from '.';
 
@@ -9,12 +9,16 @@ afterEach(() => {});
 
 describe('Brand', () => {
   test('sidebar not expanded', () => {
-    const tree = renderer.create(<Brand />).toJSON();
-    expect(tree).toMatchSnapshot();
+    render(<Brand />);
+
+    const aside = screen.getByRole('list');
+    expect(aside).toMatchSnapshot();
   });
 
   test('sidebar expanded', () => {
-    const tree = renderer.create(<Brand expanded />).toJSON();
-    expect(tree).toMatchSnapshot();
+    render(<Brand expanded />);
+
+    const aside = screen.getByRole('list');
+    expect(aside).toMatchSnapshot();
   });
 });

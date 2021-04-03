@@ -7,7 +7,7 @@ import { StyledUl, StyledLi, StyledLink, StyledLinkTitle } from './Brand.styles'
 
 function Brand(props) {
   return (
-    <StyledUl>
+    <StyledUl role="list">
       <StyledLi>
         <StyledLink to="/" expanded={props.expanded}>
           <FontAwesomeIcon icon={faPlay} />

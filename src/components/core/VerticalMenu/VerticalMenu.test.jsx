@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 
 import VerticalMenu from '.';
 
@@ -9,12 +9,16 @@ afterEach(() => {});
 
 describe('VerticalMenu', () => {
   test('sidebar not expanded', () => {
-    const tree = renderer.create(<VerticalMenu />).toJSON();
-    expect(tree).toMatchSnapshot();
+    render(<VerticalMenu />);
+
+    const aside = screen.getByRole('list');
+    expect(aside).toMatchSnapshot();
   });
 
   test('sidebar expanded', () => {
-    const tree = renderer.create(<VerticalMenu expanded />).toJSON();
-    expect(tree).toMatchSnapshot();
+    render(<VerticalMenu expanded />);
+
+    const aside = screen.getByRole('list');
+    expect(aside).toMatchSnapshot();
   });
 });

@@ -7,7 +7,7 @@ import { StyledUl, StyledLi, StyledLink, StyledLinkTitle } from './VerticalMenu.
 
 function VerticalMenu(props) {
   return (
-    <StyledUl>
+    <StyledUl role="list">
       <StyledLi expanded={props.expanded} active>
         <StyledLink to="/" expanded={props.expanded} className="disabledCursor">
           <FontAwesomeIcon icon={faHome} />
