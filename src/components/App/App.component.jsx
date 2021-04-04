@@ -11,7 +11,7 @@ import AppContent from '../core/AppContent';
 
 import BlankPage from '../core/BlankPage';
 
-// import HomePage from '../../pages/Home';
+import HomePage from '../../pages/Home';
 
 function App() {
   return (
@@ -21,9 +21,9 @@ function App() {
           <Sidebar />
           <Wrapper>
             <Navbar />
-            {/* <AppContent>
+            <AppContent>
               <HomePage />
-            </AppContent> */}
+            </AppContent>
           </Wrapper>
         </Route>
         <Route exact path="/not-authorized">
