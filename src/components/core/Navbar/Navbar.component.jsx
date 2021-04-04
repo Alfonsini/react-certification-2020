@@ -1,45 +1,56 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUser } from '@fortawesome/free-solid-svg-icons';
 
-import MenuHorizontal from '../Menus/Horizontal.component';
+import MenuHorizontal from '../HorizontalMenu/HorizontalMenu.component';
 
-import './Navbar.styles.css';
+import {
+  StyledMenu,
+  StyledNav,
+  StyledToggleIcon,
+  StyledUlLeft,
+  StyledUlRight,
+  StyledLi,
+  StyledToggleUserMenu,
+} from './Navbar.styles';
 
 import Search from '../Search';
 
 function Navbar() {
-  const mainNavRef = useRef(null);
+  const [showMenu, setShowMenu] = useState(false);
 
-  function handleOnMainNavClick() {
-    const mainNav = mainNavRef.current;
-    mainNav.classList.toggle('active');
-  }
+  const toggleShowMenu = () => {
+    setShowMenu(!showMenu);
+  };
 
   return (
     <>
-      <nav className="navbar-container">
-        <span className="navbar-toggle">
-          <FontAwesomeIcon icon={faBars} onClick={handleOnMainNavClick} />
-        </span>
-        <ul className="navbar-nav">
-          <li>
+      <StyledNav data-testid="nav">
+        <StyledToggleIcon>
+          <FontAwesomeIcon
+            data-testid="toggle-button"
+            icon={faBars}
+            onClick={toggleShowMenu}
+          />
+        </StyledToggleIcon>
+        <StyledUlLeft>
+          <StyledLi>
             <Search />
-          </li>
-        </ul>
-        <ul className="navbar-user">
-          <li>
-            <span className="nav-links disabledCursor">
-              <FontAwesomeIcon icon={faUser} />
-            </span>
-          </li>
-        </ul>
-      </nav>
+          </StyledLi>
+        </StyledUlLeft>
+        <StyledUlRight>
+          <StyledLi>
+            <StyledToggleUserMenu className="disabledCursor">
+              <FontAwesomeIcon data-testid="user-button" icon={faUser} />
+            </StyledToggleUserMenu>
+          </StyledLi>
+        </StyledUlRight>
+      </StyledNav>
 
-      <nav className="navbar-responsive-container" ref={mainNavRef}>
+      <StyledMenu role="menu" active={showMenu}>
         <MenuHorizontal />
-      </nav>
+      </StyledMenu>
     </>
   );
 }

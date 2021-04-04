@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HorizontalMenu favorites is available 1`] = `
+<span
+  class="sc-hKgILt fNqzIf"
+>
+  Favorites
+</span>
+`;
+
+exports[`HorizontalMenu home is available 1`] = `
+<span
+  class="sc-hKgILt fNqzIf"
+>
+  Home
+</span>
+`;
+
+exports[`HorizontalMenu render correctly 1`] = `
+<ul
+  class="sc-bdfBwQ cJHRYr"
+  role="menu"
+>
+  <li
+    class="sc-gsTCUz fXCZoy"
+  >
+    <a
+      class="sc-dlfnbm gWYOlF disabledCursor"
+      to="/"
+    >
+      <span
+        class="sc-hKgILt fNqzIf"
+      >
+        Home
+      </span>
+    </a>
+  </li>
+  <li
+    class="sc-gsTCUz fXCZoy"
+  >
+    <a
+      class="sc-dlfnbm gWYOlF disabledCursor"
+      to="/"
+    >
+      <span
+        class="sc-hKgILt fNqzIf"
+      >
+        Favorites
+      </span>
+    </a>
+  </li>
+</ul>
+`;
