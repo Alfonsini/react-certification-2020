@@ -48,7 +48,7 @@ function Navbar() {
         </StyledUlRight>
       </StyledNav>
 
-      <StyledMenu role="menu" active={showMenu}>
+      <StyledMenu data-testid="nav-menu-horizontal" active={showMenu}>
         <MenuHorizontal />
       </StyledMenu>
     </>

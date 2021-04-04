@@ -1,9 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Navbar menu is in place 1`] = `
+<menu
+  class="sc-gKsewC bzDOLT"
+  data-testid="nav-menu-horizontal"
+>
+  <ul
+    class="sc-bdfBwQ cJHRYr"
+    role="menu"
+  >
+    <li
+      class="sc-gsTCUz fXCZoy"
+    >
+      <a
+        class="sc-dlfnbm gWYOlF disabledCursor"
+        to="/"
+      >
+        <span
+          class="sc-hKgILt fNqzIf"
+        >
+          Home
+        </span>
+      </a>
+    </li>
+    <li
+      class="sc-gsTCUz fXCZoy"
+    >
+      <a
+        class="sc-dlfnbm gWYOlF disabledCursor"
+        to="/"
+      >
+        <span
+          class="sc-hKgILt fNqzIf"
+        >
+          Favorites
+        </span>
+      </a>
+    </li>
+  </ul>
+</menu>
+`;
+
 exports[`Navbar menu when visible 1`] = `
 <menu
   class="sc-gKsewC gSvkzp"
-  role="menu"
+  data-testid="nav-menu-horizontal"
 >
   <ul
     class="sc-bdfBwQ cJHRYr"
@@ -73,19 +114,22 @@ exports[`Navbar render correctly 1`] = `
       class="sc-jrAGrp hnzIIL"
     >
       <div
-        class="search"
+        class="sc-kEjbxe fXdHsJ"
+        data-testid="search-container"
       >
         <input
-          class="search-box"
+          class="sc-iqHYGH kNdlqR"
+          data-testid="search-input"
           name="search"
           placeholder="Search..."
           type="text"
         />
         <svg
           aria-hidden="true"
-          class="svg-inline--fa fa-search fa-w-16 search-icon"
+          class="svg-inline--fa fa-search fa-w-16 "
           data-icon="search"
           data-prefix="fas"
+          data-testid="search-icon"
           focusable="false"
           role="img"
           viewBox="0 0 512 512"

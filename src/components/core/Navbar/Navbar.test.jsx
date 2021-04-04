@@ -27,8 +27,8 @@ describe('Navbar', () => {
     expect(button).toHaveClass('fa-user');
   });
 
-  test('render correctly', () => {
-    const menu = screen.getByRole('menu', { hidden: true });
+  test('menu is in place', () => {
+    const menu = screen.getByTestId('nav-menu-horizontal', { hidden: true });
     expect(menu).toMatchSnapshot();
   });
 
@@ -36,7 +36,7 @@ describe('Navbar', () => {
     const button = screen.getByTestId('toggle-button');
     fireEvent.click(button);
 
-    const menu = screen.getByRole('menu');
+    const menu = screen.getByTestId('nav-menu-horizontal');
     expect(menu).toBeVisible();
     expect(menu).toMatchSnapshot();
   });
