@@ -1,9 +1,11 @@
-.col {
+import styled from 'styled-components';
+
+const StyledCol = styled.div`
   margin: 5px 5px 10px 5px;
   padding: 6px 6px 6px 6px;
-}
+`;
 
-.row {
+const StyledRow = styled.div`
   margin: 0;
   width: 95.5%;
 
@@ -16,4 +18,6 @@
   flex-flow: column;
   flex-direction: row;
   flex-wrap: wrap;
-}
+`;
+
+export { StyledCol, StyledRow };

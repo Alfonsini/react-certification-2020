@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import './Home.styles.css';
+import { StyledCol, StyledRow } from './Home.styles';
 
 import Video from '../../components/Video';
 
@@ -26,20 +26,18 @@ function HomePage() {
   }, []);
 
   return (
-    <section className="homepage">
-      <div className="row">
-        {videoList.slice(1).map((v) => (
-          <div className="col" key={v.id.videoId.toString()}>
-            <Video
-              id="nmXMgqjQzls"
-              title="RAP AGAINST DICTATORSHIP"
-              channelName={videoList[0].snippet.title}
-              image={v.snippet.thumbnails.medium.url}
-            />
-          </div>
-        ))}
-      </div>
-    </section>
+    <StyledRow data-testid="row">
+      {videoList.slice(1).map((v) => (
+        <StyledCol key={v.id.videoId.toString()}>
+          <Video
+            id="nmXMgqjQzls"
+            title={v.snippet.title}
+            channelName={videoList[0].snippet.title}
+            image={v.snippet.thumbnails.medium.url}
+          />
+        </StyledCol>
+      ))}
+    </StyledRow>
   );
 }
 
