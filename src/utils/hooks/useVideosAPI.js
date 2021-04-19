@@ -27,6 +27,7 @@ function useVideosAPI(query) {
   const PART = 'snippet';
   const MAX_RESULTS = 25;
   const ORDER = 'rating';
+  const TYPE = 'video';
 
   useEffect(() => {
     let mounted = true;
@@ -38,7 +39,7 @@ function useVideosAPI(query) {
       if (mounted) setIsLoading(true);
 
       fetch(
-        `${process.env.REACT_APP_API_URL}?part=${PART}&maxResults=${MAX_RESULTS}&order=${ORDER}&q=${query}&key=${process.env.REACT_APP_API_KEY}`
+        `${process.env.REACT_APP_API_URL}?part=${PART}&maxResults=${MAX_RESULTS}&order=${ORDER}&type=${TYPE}&q=${query}&key=${process.env.REACT_APP_API_KEY}`
       )
         .then(async (resp) => {
           if (!resp.ok) {

@@ -135,9 +135,10 @@ describe('Search field', () => {
     const PART = 'snippet';
     const MAX_RESULTS = 25;
     const ORDER = 'rating';
+    const TYPE = 'video';
 
     expect(window.fetch).toHaveBeenCalledWith(
-      `${process.env.REACT_APP_API_URL}?part=${PART}&maxResults=${MAX_RESULTS}&order=${ORDER}&q=${input.value}&key=${process.env.REACT_APP_API_KEY}`
+      `${process.env.REACT_APP_API_URL}?part=${PART}&maxResults=${MAX_RESULTS}&order=${ORDER}&type=${TYPE}&q=${input.value}&key=${process.env.REACT_APP_API_KEY}`
     );
   });
 
