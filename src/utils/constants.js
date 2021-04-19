@@ -1,3 +1,6 @@
 const AUTH_STORAGE_KEY = 'wa_cert_authenticated';
 
-export { AUTH_STORAGE_KEY };
+/* Theme */
+const SKINS = { Light: 'light', Dark: 'dark' };
+
+export { AUTH_STORAGE_KEY, SKINS };
