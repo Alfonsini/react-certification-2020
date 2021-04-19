@@ -115,7 +115,7 @@ exports[`Navbar render correctly 1`] = `
     >
       <div
         class="sc-kEjbxe fXdHsJ"
-        data-testid="search-container"
+        data-testid="search-div"
       >
         <input
           class="sc-iqHYGH kNdlqR"

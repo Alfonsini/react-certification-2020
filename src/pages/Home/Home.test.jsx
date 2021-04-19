@@ -1,17 +1,16 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+// import { BrowserRouter } from 'react-router-dom';
+import { render, screen } from '../../test/testUtils';
 
+// import Navbar from '../../components/core/Navbar';
+// import AppContent from '../../components/core/AppContent';
 import Home from '.';
 
-beforeEach(() => {
-  render(<Home />);
-});
-
-afterEach(() => {});
-
 describe('Home', () => {
-  test('home render correctly', async () => {
-    const aside = screen.getByTestId('row');
-    expect(aside).toMatchSnapshot();
+  test('home render correctly', () => {
+    render(<Home />);
+    const row = screen.getByTestId('row');
+    expect(row).toBeInTheDocument();
+    expect(row).toMatchSnapshot();
   });
 });
