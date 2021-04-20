@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -10,20 +11,26 @@ function Search() {
   const [query, setQuery] = useState(null);
   const { isLoading } = useVideosAPI(query);
   const inputRef = useRef();
+  const history = useHistory();
+  const location = useLocation();
+
+  const search = () => {
+    setQuery(inputRef.current.value);
+    inputRef.current.focus();
+    if (location.pathname !== '/') history.push('/');
+  };
 
   const handleSearch = (e) => {
     if (e.key === 'Enter') {
       if (e.target.value && !isLoading) {
-        setQuery(e.target.value);
-        inputRef.current.focus();
+        search();
       }
     }
   };
 
   const handleIconSearchClick = () => {
     if (inputRef.current.value && !isLoading) {
-      setQuery(inputRef.current.value);
-      inputRef.current.focus();
+      search();
     }
   };
 

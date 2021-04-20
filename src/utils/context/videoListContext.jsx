@@ -6,6 +6,8 @@ const VideoListProvider = ({ children }) => {
   const [videoList, setVideoList] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [videoIdSelected, setVideoIdSelected] = useState(null);
+  const [videoSelected, setVideoSelected] = useState(null);
 
   return (
     <VideoListContext.Provider
@@ -16,6 +18,10 @@ const VideoListProvider = ({ children }) => {
         setIsLoading,
         errorMessage,
         setErrorMessage,
+        videoIdSelected,
+        setVideoIdSelected,
+        videoSelected,
+        setVideoSelected,
       }}
     >
       {children}

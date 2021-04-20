@@ -1,13 +1,12 @@
 import React from 'react';
 import { render, screen } from '../../test/testUtils';
 
-import HomePage from '.';
+import VideoDetail from '.';
 
-describe('Home', () => {
-  test('home render correctly', () => {
-    render(<HomePage />);
+describe('Video detail', () => {
+  test('Video detail render correctly', () => {
+    render(<VideoDetail />);
     const row = screen.getByTestId('row');
     expect(row).toBeInTheDocument();
-    expect(row).toMatchSnapshot();
   });
 });

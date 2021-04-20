@@ -19,8 +19,10 @@ function HomePage() {
             <Video
               id={v.id.videoId}
               title={v.snippet.title}
+              channelId={v.snippet.channelId}
               channelName={v.snippet.channelTitle}
               image={v.snippet.thumbnails.medium.url}
+              publishedAt={v.snippet.publishedAt}
             />
           </StyledCol>
         ))}

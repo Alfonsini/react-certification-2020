@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { VideoListContext } from '../../utils/context/videoListContext';
 
@@ -24,9 +23,9 @@ import {
   VideoFooter,
   VideoLink,
   VideoSection,
-} from './Video.styles';
+} from './RelatedVideo.styles';
 
-function Video({
+function RelatedVideo({
   id,
   title,
   channelId,
@@ -35,12 +34,10 @@ function Video({
   showTime = false,
   time,
   publishedAt,
+  handleSelectVideo,
 }) {
   const [isCliphover, setIsClipHover] = useState(false);
-  const history = useHistory();
-  const { videoList, setVideoIdSelected, setVideoSelected } = useContext(
-    VideoListContext
-  );
+  const { setVideoIdSelected } = useContext(VideoListContext);
 
   const handleHover = () => {
     setIsClipHover(!isCliphover);
@@ -78,17 +75,7 @@ function Video({
 
   const handleNavigateToVideo = async () => {
     await setVideoIdSelected(id);
-
-    if (id && videoList && videoList.items) {
-      const video = videoList.items.filter((v) => v.id.videoId === id);
-
-      if (video) {
-        console.log('handleNavigateToVideo: ', video);
-        await setVideoSelected(video[0]);
-      }
-    }
-
-    history.push('/video-details');
+    handleSelectVideo(id);
   };
 
   return (
@@ -157,4 +144,4 @@ function Video({
   );
 }
 
-export default Video;
+export default RelatedVideo;

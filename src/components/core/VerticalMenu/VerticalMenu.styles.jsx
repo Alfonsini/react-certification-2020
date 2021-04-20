@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledUl = styled.ul`
@@ -54,7 +55,7 @@ const StyledLi = styled.li`
   }
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   color: #6d6f97;
   margin: 0 15px;
   padding: 10px 15px 10px 15px;
@@ -65,6 +66,7 @@ const StyledLink = styled.a`
   ${(props) => !props.expanded && `width: 50px`};
   ${(props) => props.expanded && `width: calc(260px - 35px)`};
   display: flex;
+  text-decoration: none;
 
   svg {
     margin-right: 1.1rem;

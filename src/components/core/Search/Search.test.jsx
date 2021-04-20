@@ -235,6 +235,8 @@ describe('API returning 403 during searching ', () => {
       })
     );
 
+    server.printHandlers();
+
     render(
       <>
         <BrowserRouter>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledUl = styled.ul`
@@ -21,7 +22,7 @@ const StyledLi = styled.li`
   }
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   text-decoration: none;
 
   @media screen and (max-width: 500px) {
