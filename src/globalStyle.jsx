@@ -41,11 +41,6 @@ body {
   border: solid 1px #ccc;
 }
 
-.disabledCursor {
-  cursor: default;
-  pointer-events: none;
-}
-
 input[type='search']::-webkit-search-decoration,
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-results-button,
