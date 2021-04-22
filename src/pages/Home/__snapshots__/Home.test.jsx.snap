@@ -3,6 +3,6 @@
 exports[`Home home render correctly 1`] = `
 <div
   class="sc-gsTCUz fbApLv"
-  data-testid="row"
+  data-testid="home-page"
 />
 `;

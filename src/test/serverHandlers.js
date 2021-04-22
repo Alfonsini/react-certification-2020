@@ -10,6 +10,8 @@ const handlers = [
     // const q = query.get('q');
     // const key = query.get('key');
 
+    console.log('Executing Mock');
+
     return res(ctx.status(200), ctx.json(search.search()));
   }),
 ];

@@ -1,13 +1,11 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '../../../test/testUtils';
 
 import Sidebar from '.';
 
 beforeEach(() => {
   render(<Sidebar />);
 });
-
-afterEach(() => {});
 
 describe('Sidebar', () => {
   test('sidebar render correctly', async () => {

@@ -80,8 +80,13 @@ function RelatedVideo({
 
   return (
     <VideoSection data-testid="video-section">
-      <ClipDiv onMouseOver={() => handleHover()} onMouseOut={() => handleHover()}>
+      <ClipDiv
+        onMouseOver={() => handleHover()}
+        onMouseOut={() => handleHover()}
+        data-testid="clip-video-section"
+      >
         <VideoLink
+          data-testid="related-video-link"
           to="/video-details"
           id={`${id}`}
           onClick={() => handleNavigateToVideo()}
@@ -123,7 +128,11 @@ function RelatedVideo({
               <p>{getTimeAgo()}</p>
             </ChannelNameMetaDiv>
           </VideoFooter>
-          <MoreButton type="button" isShowing={isCliphover ? 1 : 0}>
+          <MoreButton
+            type="button"
+            isShowing={isCliphover ? 1 : 0}
+            data-testid="more-button"
+          >
             <MoreButtonSvg
               viewBox="0 0 24 24"
               preserveAspectRatio="xMidYMid meet"

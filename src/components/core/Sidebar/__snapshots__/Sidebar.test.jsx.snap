@@ -50,8 +50,9 @@ exports[`Sidebar sidebar render correctly 1`] = `
       class="sc-gsTCUz iUsqMz"
     >
       <a
-        class="sc-dlfnbm jsEzSa disabledCursor"
-        to="/"
+        class="sc-dlfnbm hPocZh"
+        expanded="0"
+        href="/"
       >
         <svg
           aria-hidden="true"
@@ -79,8 +80,9 @@ exports[`Sidebar sidebar render correctly 1`] = `
       class="sc-gsTCUz jDzifl"
     >
       <a
-        class="sc-dlfnbm jsEzSa disabledCursor"
-        to="/"
+        class="sc-dlfnbm hPocZh"
+        expanded="0"
+        href="/favorites"
       >
         <svg
           aria-hidden="true"
@@ -100,7 +102,7 @@ exports[`Sidebar sidebar render correctly 1`] = `
         <span
           class="sc-eCssSg jCnlqQ"
         >
-          Favorities
+          Favorites
         </span>
       </a>
     </li>

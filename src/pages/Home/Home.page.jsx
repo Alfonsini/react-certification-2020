@@ -10,12 +10,12 @@ function HomePage() {
   const { videoList, isLoading, errorMessage } = useVideosAPI(null);
 
   return (
-    <StyledRow data-testid="row">
+    <StyledRow data-testid="home-page">
       {!isLoading &&
         videoList &&
         videoList.items &&
         videoList.items.map((v) => (
-          <StyledCol key={v.id.videoId.toString()} data-testid="video-item">
+          <StyledCol key={v.id.videoId.toString()} data-testid="home-video-col">
             <Video
               id={v.id.videoId}
               title={v.snippet.title}

@@ -1,11 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test/testUtils';
 
 import Brand from '.';
-
-beforeEach(() => {});
-
-afterEach(() => {});
 
 describe('Brand', () => {
   test('sidebar not expanded', () => {

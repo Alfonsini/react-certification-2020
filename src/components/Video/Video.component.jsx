@@ -95,6 +95,7 @@ function Video({
     <VideoSection data-testid="video-section">
       <ClipDiv onMouseOver={() => handleHover()} onMouseOut={() => handleHover()}>
         <VideoLink
+          data-testid="video-link"
           to="/video-details"
           id={`${id}`}
           onClick={() => handleNavigateToVideo()}

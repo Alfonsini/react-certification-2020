@@ -6,10 +6,11 @@ import '@testing-library/jest-dom/extend-expect';
 
 import { server } from './test/server';
 
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '.env.test') });
 
 beforeAll(() => {
-  server.listen();
+  server.listen({ onUnhandledRequest: 'warn' });
 });
 afterEach(() => {
   server.resetHandlers();

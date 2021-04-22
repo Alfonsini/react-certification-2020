@@ -1,6 +1,6 @@
 import { useEffect, useDebugValue, useContext } from 'react';
 
-import * as search from '../../test/search';
+// import * as search from '../../test/search';
 
 import { VideoListContext } from '../context/videoListContext';
 
@@ -40,16 +40,19 @@ function useVideosAPI(query) {
 
       if (mounted) setIsLoading(true);
 
-      if (mounted && (!process.env.NODE_ENV || process.env.NODE_ENV === 'development')) {
-        // dev code
-        console.info('Dev code');
-        setVideoList(search.search());
+      // if (mounted && (!process.env.NODE_ENV || process.env.NODE_ENV === 'development')) {
+      //   // dev code
+      //   console.info('Dev code');
+      //   setVideoList(search.search());
 
-        setIsLoading(false);
-        return;
-      }
+      //   setIsLoading(false);
+      //   return;
+      // }
 
-      console.log('Production code');
+      // console.log(
+      //   'Production code',
+      //   `${process.env.REACT_APP_API_URL}?part=${PART}&maxResults=${MAX_RESULTS}&order=${ORDER}&type=${TYPE}&q=${query}&key=${process.env.REACT_APP_API_KEY}`
+      // );
 
       fetch(
         `${process.env.REACT_APP_API_URL}?part=${PART}&maxResults=${MAX_RESULTS}&order=${ORDER}&type=${TYPE}&q=${query}&key=${process.env.REACT_APP_API_KEY}`

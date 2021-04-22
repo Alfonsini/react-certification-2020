@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import { server, rest } from '../../../test/server';
 import * as search from '../../../test/search';
 import { render, screen, fireEvent } from '../../../test/testUtils';
@@ -48,15 +47,13 @@ describe('Search field', () => {
     expect(input.value).toBe('wizeline');
   });
 
-  test('required type some text to search using search icon', async () => {
+  test('type some text is requiered to search using search icon', async () => {
     render(
       <>
-        <BrowserRouter>
-          <Navbar />
-          <AppContent>
-            <HomePage />
-          </AppContent>
-        </BrowserRouter>
+        <Navbar />
+        <AppContent>
+          <HomePage />
+        </AppContent>
       </>
     );
 
@@ -69,37 +66,13 @@ describe('Search field', () => {
     expect(window.fetch).toBeCalledTimes(0);
   });
 
-  test('text provided but is loading a current search request using search icon', async () => {
+  test('check how many calls has done on successful search', async () => {
     render(
       <>
-        <BrowserRouter>
-          <Navbar />
-          <AppContent>
-            <HomePage />
-          </AppContent>
-        </BrowserRouter>
-      </>
-    );
-
-    const button = screen.getByTestId('search-icon');
-    const input = screen.getByTestId('search-input');
-
-    fireEvent.change(input, { target: { value: 'wizeline' } });
-    fireEvent.click(button);
-    fireEvent.click(button);
-
-    expect(window.fetch).toBeCalledTimes(1);
-  });
-
-  test('check how many calls has done', async () => {
-    render(
-      <>
-        <BrowserRouter>
-          <Navbar />
-          <AppContent>
-            <HomePage />
-          </AppContent>
-        </BrowserRouter>
+        <Navbar />
+        <AppContent>
+          <HomePage />
+        </AppContent>
       </>
     );
 
@@ -108,7 +81,7 @@ describe('Search field', () => {
     fireEvent.change(input, { target: { value: 'wizeline' } });
     fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
 
-    await screen.findAllByTestId('video-item');
+    await screen.findAllByTestId('video-section');
 
     expect(window.fetch).toBeCalledTimes(1);
   });
@@ -116,12 +89,10 @@ describe('Search field', () => {
   test('check the correct concat of the URL', async () => {
     render(
       <>
-        <BrowserRouter>
-          <Navbar />
-          <AppContent>
-            <HomePage />
-          </AppContent>
-        </BrowserRouter>
+        <Navbar />
+        <AppContent>
+          <HomePage />
+        </AppContent>
       </>
     );
 
@@ -130,7 +101,7 @@ describe('Search field', () => {
     fireEvent.change(input, { target: { value: 'wizeline' } });
     fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
 
-    await screen.findAllByTestId('video-item');
+    await screen.findAllByTestId('video-section');
 
     const PART = 'snippet';
     const MAX_RESULTS = 25;
@@ -142,15 +113,13 @@ describe('Search field', () => {
     );
   });
 
-  test('searching successful using input', async () => {
+  test('rendering searching successful using input', async () => {
     render(
       <>
-        <BrowserRouter>
-          <Navbar />
-          <AppContent>
-            <HomePage />
-          </AppContent>
-        </BrowserRouter>
+        <Navbar />
+        <AppContent>
+          <HomePage />
+        </AppContent>
       </>
     );
 
@@ -159,19 +128,17 @@ describe('Search field', () => {
     fireEvent.change(input, { target: { value: 'wizeline' } });
     fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
 
-    const count = await (await screen.findAllByTestId('video-item')).length;
+    const count = await (await screen.findAllByTestId('video-section')).length;
     expect(count).toBe(25);
   });
 
-  test('searching successful using search icon', async () => {
+  test('rendering searching successful using search icon', async () => {
     render(
       <>
-        <BrowserRouter>
-          <Navbar />
-          <AppContent>
-            <HomePage />
-          </AppContent>
-        </BrowserRouter>
+        <Navbar />
+        <AppContent>
+          <HomePage />
+        </AppContent>
       </>
     );
 
@@ -181,19 +148,17 @@ describe('Search field', () => {
     fireEvent.change(input, { target: { value: 'wizeline' } });
     fireEvent.click(button);
 
-    const count = await (await screen.findAllByTestId('video-item')).length;
+    const count = await (await screen.findAllByTestId('video-section')).length;
     expect(count).toBe(25);
   });
 
   test('text provided but Up key was pressed', async () => {
     render(
       <>
-        <BrowserRouter>
-          <Navbar />
-          <AppContent>
-            <HomePage />
-          </AppContent>
-        </BrowserRouter>
+        <Navbar />
+        <AppContent>
+          <HomePage />
+        </AppContent>
       </>
     );
 
@@ -205,15 +170,33 @@ describe('Search field', () => {
     expect(window.fetch).toBeCalledTimes(0);
   });
 
+  test('text provided search icon was pressed but is loading', async () => {
+    render(
+      <>
+        <Navbar />
+        <AppContent>
+          <HomePage />
+        </AppContent>
+      </>
+    );
+
+    const button = screen.getByTestId('search-icon');
+    const input = screen.getByTestId('search-input');
+
+    fireEvent.change(input, { target: { value: 'wizeline' } });
+    fireEvent.click(button);
+    fireEvent.click(button);
+
+    expect(window.fetch).toBeCalledTimes(1);
+  });
+
   test('text provided Enter key was pressed but is Loading', async () => {
     render(
       <>
-        <BrowserRouter>
-          <Navbar />
-          <AppContent>
-            <HomePage />
-          </AppContent>
-        </BrowserRouter>
+        <Navbar />
+        <AppContent>
+          <HomePage />
+        </AppContent>
       </>
     );
 
@@ -235,16 +218,14 @@ describe('API returning 403 during searching ', () => {
       })
     );
 
-    server.printHandlers();
+    // server.printHandlers();
 
     render(
       <>
-        <BrowserRouter>
-          <Navbar />
-          <AppContent>
-            <HomePage />
-          </AppContent>
-        </BrowserRouter>
+        <Navbar />
+        <AppContent>
+          <HomePage />
+        </AppContent>
       </>
     );
     const input = screen.getByTestId('search-input');

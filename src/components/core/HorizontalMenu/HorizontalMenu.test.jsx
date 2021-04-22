@@ -1,13 +1,11 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test/testUtils';
 
 import HorizontalMenu from '.';
 
 beforeEach(() => {
   render(<HorizontalMenu />);
 });
-
-afterEach(() => {});
 
 describe('HorizontalMenu', () => {
   test('render correctly', () => {

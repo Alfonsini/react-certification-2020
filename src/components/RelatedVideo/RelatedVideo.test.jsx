@@ -6,6 +6,7 @@ import RelatedVideo from '.';
 describe('Related video', () => {
   test('related video render correctly', () => {
     render(<RelatedVideo />);
+
     const section = screen.getByTestId('video-section');
     expect(section).toBeInTheDocument();
   });
