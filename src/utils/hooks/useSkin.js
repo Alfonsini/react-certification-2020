@@ -1,20 +1,18 @@
 import { useState, useEffect } from 'react';
-
-import themeConfig from '../../configs/themeConfigs';
+import { SKINS, THEME_STORAGE_KEY } from '../constants';
 
 function useSkin() {
-  const [skin, setSkin] = useState(() => {
-    // Recover de initial state
-    return themeConfig.layout.skin;
-  });
+  const [skin, setSkin] = useState(SKINS.Light);
 
   const setValue = (value) => {
+    window.localStorage.setItem(THEME_STORAGE_KEY, value);
     setSkin(value);
   };
 
   useEffect(() => {
-    // Change the skin updating the VDOM
-  }, [skin]);
+    const localTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (localTheme) setSkin(localTheme);
+  }, []);
 
   return { skin, setValue };
 }

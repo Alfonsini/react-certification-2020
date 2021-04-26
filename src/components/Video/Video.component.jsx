@@ -1,7 +1,4 @@
-import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-
-import { VideoListContext } from '../../utils/context/videoListContext';
+import React, { useState } from 'react';
 
 import {
   ChannelNameA,
@@ -35,12 +32,9 @@ function Video({
   showTime = false,
   time,
   publishedAt,
+  onVideoClick,
 }) {
   const [isCliphover, setIsClipHover] = useState(false);
-  const history = useHistory();
-  const { videoList, setVideoIdSelected, setVideoSelected } = useContext(
-    VideoListContext
-  );
 
   const handleHover = () => {
     setIsClipHover(!isCliphover);
@@ -76,29 +70,14 @@ function Video({
     }
   };
 
-  const handleNavigateToVideo = async () => {
-    await setVideoIdSelected(id);
-
-    if (id && videoList && videoList.items) {
-      const video = videoList.items.filter((v) => v.id.videoId === id);
-
-      if (video) {
-        console.log('handleNavigateToVideo: ', video);
-        await setVideoSelected(video[0]);
-      }
-    }
-
-    history.push('/video-details');
-  };
-
   return (
     <VideoSection data-testid="video-section">
       <ClipDiv onMouseOver={() => handleHover()} onMouseOut={() => handleHover()}>
         <VideoLink
           data-testid="video-link"
-          to="/video-details"
+          to="#"
           id={`${id}`}
-          onClick={() => handleNavigateToVideo()}
+          onClick={() => onVideoClick(id)}
         >
           <SectionPreviewContainer>
             <PreviewContainerImg src={image} alt="" />

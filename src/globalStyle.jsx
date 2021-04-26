@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { SKINS } from './utils/constants';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -11,6 +10,7 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: ${(props) => `${props.theme.backgroundColorBody}`};
 }
 
 *,
@@ -23,22 +23,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: 
-  ${(props) => (props.theme.layout.skin === SKINS.Light ? '#f8f8f8' : '#020635')};
+  ${(props) => props.theme.backgroudColorBody};
   height: 100vh;
   width: 100vw;
   text-rendering: optimizeLegibility;
   display: inline;
-}
-
-.card {
-  width: 30%;
-  display: flex;
-  background: #eee;
-  padding: 0.6em 1em 0.6em 0.6em;
-  margin-bottom: 1em;
-  border-radius: 0.3em;
-  box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 10px;
-  border: solid 1px #ccc;
 }
 
 input[type='search']::-webkit-search-decoration,

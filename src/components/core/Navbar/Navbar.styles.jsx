@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 
-const StyledToggleIcon = styled.span`
+const StyledToggleThemeIcon = styled.span`
+  display: block;
+  cursor: pointer;
+  margin-right: 15px;
+
+  @media screen and (max-width: 500px) {
+    display: none;
+    margin-left: 0px;
+  }
+`;
+
+const StyledToggleMenuIcon = styled.span`
   display: none;
   cursor: pointer;
 
@@ -74,7 +85,8 @@ const StyledLi = styled.li`
 export {
   StyledMenu,
   StyledNav,
-  StyledToggleIcon,
+  StyledToggleThemeIcon,
+  StyledToggleMenuIcon,
   StyledUlLeft,
   StyledUlRight,
   StyledLi,

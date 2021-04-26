@@ -4,13 +4,13 @@ import styled from 'styled-components';
 const ChannelNameA = styled.a`
   margin: 0;
   font-size: 12px;
-  color: #73768d;
+  color: ${(props) => `${props.theme.clipChannel}`};
   display: block;
   width: 100%;
   text-decoration: none;
 
   :hover {
-    color: rgba(18, 18, 18, 0.8);
+    color: ${(props) => `${props.theme.clipChannelHover}`};
   }
 `;
 
@@ -19,7 +19,7 @@ const ChannelNameMetaDiv = styled.div`
     font-size: 12px;
     display: inline-block;
     margin: 0;
-    color: #606060;
+    color: ${(props) => `${props.theme.clipChannelMeta}`};
   }
 
   p:first-child:after {
@@ -46,16 +46,9 @@ const MoreButton = styled.button`
   top: 0;
   right: 0;
   cursor: pointer;
+  color: ${(props) => `${props.theme.clipMoreButtonHover}`};
 
   ${(props) => props.isShowing && `opacity: 1;`}
-
-  svg {
-    fill: #909090;
-  }
-
-  :hover svg {
-    fill: #606060;
-  }
 `;
 
 const MoreButtonSvg = styled.svg`
@@ -206,7 +199,7 @@ const SectionContentContainer = styled.section`
     -webkit-line-clamp: 2;
     overflow: hidden;
     margin-bottom: 5px;
-    color: #3d4055;
+    color: ${(props) => `${props.theme.clipTitle}`};
   }
 `;
 

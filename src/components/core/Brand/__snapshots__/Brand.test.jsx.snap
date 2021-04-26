@@ -2,14 +2,14 @@
 
 exports[`Brand sidebar expanded 1`] = `
 <ul
-  class="sc-bdfBwQ kyzaBV"
+  class="sc-bkzZxe emqQXN"
   role="list"
 >
   <li
-    class="sc-gsTCUz iVpTQG"
+    class="sc-idOhPF eNZqtm"
   >
     <a
-      class="sc-dlfnbm bXcrnn"
+      class="sc-dIUggk dxdciD"
       to="/"
     >
       <svg
@@ -28,7 +28,7 @@ exports[`Brand sidebar expanded 1`] = `
         />
       </svg>
       <span
-        class="sc-eCssSg jCnlqQ"
+        class="sc-dmlrTW jbYabi"
       >
         Player
       </span>
@@ -39,14 +39,14 @@ exports[`Brand sidebar expanded 1`] = `
 
 exports[`Brand sidebar not expanded 1`] = `
 <ul
-  class="sc-bdfBwQ kyzaBV"
+  class="sc-bkzZxe emqQXN"
   role="list"
 >
   <li
-    class="sc-gsTCUz iVpTQG"
+    class="sc-idOhPF eNZqtm"
   >
     <a
-      class="sc-dlfnbm iJDBRt"
+      class="sc-dIUggk ExmPp"
       to="/"
     >
       <svg
@@ -65,7 +65,7 @@ exports[`Brand sidebar not expanded 1`] = `
         />
       </svg>
       <span
-        class="sc-eCssSg jCnlqQ"
+        class="sc-dmlrTW jbYabi"
       >
         Player
       </span>

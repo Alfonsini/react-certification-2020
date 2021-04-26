@@ -2,7 +2,7 @@
 
 exports[`HorizontalMenu favorites is available 1`] = `
 <span
-  class="sc-hKgILt fNqzIf"
+  class="sc-eCssSg jCnlqQ"
 >
   Favorites
 </span>
@@ -10,7 +10,7 @@ exports[`HorizontalMenu favorites is available 1`] = `
 
 exports[`HorizontalMenu home is available 1`] = `
 <span
-  class="sc-hKgILt fNqzIf"
+  class="sc-eCssSg jCnlqQ"
 >
   Home
 </span>
@@ -18,32 +18,32 @@ exports[`HorizontalMenu home is available 1`] = `
 
 exports[`HorizontalMenu render correctly 1`] = `
 <ul
-  class="sc-bdfBwQ cJHRYr"
+  class="sc-gsTCUz bsxJaX"
   role="menu"
 >
   <li
-    class="sc-gsTCUz fXCZoy"
+    class="sc-dlfnbm cPYGwl"
   >
     <a
-      class="sc-dlfnbm gWYOlF"
+      class="sc-hKgILt gipkdf"
       href="/"
     >
       <span
-        class="sc-hKgILt fNqzIf"
+        class="sc-eCssSg jCnlqQ"
       >
         Home
       </span>
     </a>
   </li>
   <li
-    class="sc-gsTCUz fXCZoy"
+    class="sc-dlfnbm cPYGwl"
   >
     <a
-      class="sc-dlfnbm gWYOlF"
+      class="sc-hKgILt gipkdf"
       href="/favorites"
     >
       <span
-        class="sc-hKgILt fNqzIf"
+        class="sc-eCssSg jCnlqQ"
       >
         Favorites
       </span>

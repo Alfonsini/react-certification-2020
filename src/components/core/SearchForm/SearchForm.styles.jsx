@@ -20,7 +20,6 @@ const StyledDiv = styled.div`
   svg {
     position: absolute;
     right: 0;
-    color: #e5e5e5;
     margin: 0.6rem;
   }
 `;
@@ -30,14 +29,23 @@ const StyledInput = styled.input`
   padding: 0.7rem 1.5rem 0.7rem 1.5rem;
   flex: 1;
   outline: 0;
-  border: solid 0 #ccc;
+  border: solid ${(props) => props.theme.inputBorder};
+  border-width: 1px;
   border-radius: 30px;
   width: 100%;
   height: 40px;
 
-  ::placeholder {
+  background-color: ${(props) => `${props.theme.backgroundColorWrapper}`};
+  color: ${(props) => `${props.theme.text}`};
+
+  :placeholder {
     color: #b6b8bf;
     opacity: 1; /* Firefox */
+  }
+
+  :focus {
+    border: solid ${(props) => props.theme.inputBorderFocus};
+    border-width: 1px;
   }
 `;
 

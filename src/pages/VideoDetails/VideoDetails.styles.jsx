@@ -14,7 +14,7 @@ const DescriptionP = styled.p`
   -webkit-line-clamp: 2;
   overflow: hidden;
   margin-bottom: 5px;
-  color: #3d4055;
+  color: ${(props) => `${props.theme.videoDescription}`};
 `;
 
 const RelatedTitleSectionP = styled.p`
@@ -27,7 +27,7 @@ const RelatedTitleSectionP = styled.p`
   -webkit-line-clamp: 2;
   overflow: hidden;
   margin-bottom: 5px;
-  color: #3d4055;
+  color: ${(props) => `${props.theme.videoTitle}`};
 `;
 
 const RelatedVideosSection = styled.div`
@@ -87,7 +87,7 @@ const TitleP = styled.p`
   -webkit-line-clamp: 2;
   overflow: hidden;
   margin-bottom: 5px;
-  color: #3d4055;
+  color: ${(props) => `${props.theme.videoTitle}`};
 `;
 
 const VideoSection = styled.section`
