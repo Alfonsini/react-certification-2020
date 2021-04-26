@@ -71,6 +71,9 @@ function SearchForm() {
       if (e.target.value === '' && !state.isLoading) {
         setQuery('');
         dispatch({ type: 'CLEAR' });
+        if (location.pathname !== '/') {
+          history.push('/');
+        }
       }
     }
   };
