@@ -86,19 +86,21 @@ function VideoDetailsPage() {
           {!isFetching &&
             data &&
             data.items &&
-            data.items.map((v) => (
-              <RelatedVideo
-                data-testid="related-video"
-                key={v.id.videoId}
-                id={v.id.videoId}
-                title={v.snippet.title}
-                channelId={v.snippet.channelId}
-                channelName={v.snippet.channelTitle}
-                image={v.snippet.thumbnails.medium.url}
-                publishedAt={v.snippet.publishedAt}
-                onVideoClick={handleVideoClick}
-              />
-            ))}
+            data.items
+              .filter((v) => v.snippet && v.snippet.title)
+              .map((v) => (
+                <RelatedVideo
+                  data-testid="related-video"
+                  key={v.id.videoId}
+                  id={v.id.videoId}
+                  title={v.snippet.title}
+                  channelId={v.snippet.channelId}
+                  channelName={v.snippet.channelTitle}
+                  image={v.snippet.thumbnails.medium.url}
+                  publishedAt={v.snippet.publishedAt}
+                  onVideoClick={handleVideoClick}
+                />
+              ))}
         </RelatedVideosSection>
       </StyledCol>
     </StyledRow>
