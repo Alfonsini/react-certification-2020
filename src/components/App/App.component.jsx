@@ -1,56 +1,83 @@
-import React, { useLayoutEffect } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+// import routes from '../../configs/routes';
 
-import AuthProvider from '../../providers/Auth';
+import { useAuth } from '../../providers/Auth';
+
+// Layouts
+import BlankLayout from '../Layouts/BlankLayout';
+import VerticalLayout from '../Layouts/VerticalLayout';
+import HorizontalLayout from '../Layouts/HorizontalLayout';
 import HomePage from '../../pages/Home';
-import LoginPage from '../../pages/Login';
-import NotFound from '../../pages/NotFound';
-import SecretPage from '../../pages/Secret';
-import Private from '../Private';
-import Fortune from '../Fortune';
-import Layout from '../Layout';
-import { random } from '../../utils/fns';
+import VideoDetailsPage from '../../pages/VideoDetails';
+import BlankPage from '../../pages/Blank';
+import FavoritePage from '../../pages/Favorite';
+import FavoriteVideoDetailsPage from '../../pages/FavoriteVideoDetails';
+
+// All of the available layouts
+const Layouts = { BlankLayout, VerticalLayout, HorizontalLayout };
 
 function App() {
-  useLayoutEffect(() => {
-    const { body } = document;
-
-    function rotateBackground() {
-      const xPercent = random(100);
-      const yPercent = random(100);
-      body.style.setProperty('--bg-position', `${xPercent}% ${yPercent}%`);
-    }
-
-    const intervalId = setInterval(rotateBackground, 3000);
-    body.addEventListener('click', rotateBackground);
-
-    return () => {
-      clearInterval(intervalId);
-      body.removeEventListener('click', rotateBackground);
-    };
-  }, []);
+  const { authenticated } = useAuth();
 
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <Layout>
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-          <Fortune />
-        </Layout>
-      </AuthProvider>
+      <Switch>
+        {/* <Layouts.HorizontalLayout>
+              {routes.map((route) =>
+                route.exac ? (
+                  <Route
+                    key={route.path}
+                    exac
+                    path={route.path}
+                    component={route.component}
+                  />
+                ) : (
+                  <Route key={route.path} path={route.path} component={route.component} />
+                )
+              )}
+            </Layouts.HorizontalLayout> */}
+        <Route exact path="/">
+          <Layouts.HorizontalLayout>
+            <HomePage />
+          </Layouts.HorizontalLayout>
+        </Route>
+        <Route exact path="/video-details">
+          <Layouts.HorizontalLayout>
+            <VideoDetailsPage />
+          </Layouts.HorizontalLayout>
+        </Route>
+
+        <Route exact path="/favorites">
+          {!authenticated ? (
+            <Redirect to={{ pathname: '/' }} />
+          ) : (
+            <Layouts.HorizontalLayout>
+              <FavoritePage />
+            </Layouts.HorizontalLayout>
+          )}
+        </Route>
+        <Route exact path="/favorite-details">
+          {!authenticated ? (
+            <Redirect to={{ pathname: '/' }} />
+          ) : (
+            <Layouts.HorizontalLayout>
+              <FavoriteVideoDetailsPage />
+            </Layouts.HorizontalLayout>
+          )}
+        </Route>
+
+        <Route exact path="/not-authorized">
+          <Layouts.HorizontalLayout>
+            <BlankPage />
+          </Layouts.HorizontalLayout>
+        </Route>
+        <Route exact path="/*">
+          <Layouts.HorizontalLayout>
+            <BlankPage />
+          </Layouts.HorizontalLayout>
+        </Route>
+      </Switch>
     </BrowserRouter>
   );
 }

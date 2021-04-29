@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar sidebar render correctly 1`] = `
+<aside
+  class="sc-citwmv jXTUgu"
+  role="menubar"
+>
+  <ul
+    class="sc-iktFzd iPqmEP"
+    role="list"
+  >
+    <li
+      class="sc-jJEJSO kLQdpR"
+    >
+      <a
+        class="sc-hiSbYr elvejx"
+        to="/"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-play fa-w-14 "
+          data-icon="play"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+            fill="currentColor"
+          />
+        </svg>
+        <span
+          class="sc-cBNfnY bpVrrY"
+        >
+          Player
+        </span>
+      </a>
+    </li>
+  </ul>
+  <div
+    class="sc-jcVebW jqwWBN"
+  />
+  <ul
+    class="sc-iJuUWI DfGXm"
+    role="list"
+  >
+    <li
+      class="sc-giIncl dVdkAt"
+    >
+      <a
+        class="sc-ezrdKe eoejhV"
+        expanded="0"
+        href="/"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-home fa-w-18 "
+          data-icon="home"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 576 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"
+            fill="currentColor"
+          />
+        </svg>
+        <span
+          class="sc-kLgntA inqwmJ"
+        >
+          Home
+        </span>
+      </a>
+    </li>
+  </ul>
+</aside>
+`;
+
+exports[`Sidebar sidebar render correctly expanded 1`] = `
+CSSStyleDeclaration {
+  "0": "display",
+  "1": "box-sizing",
+  "10": "visibility",
+  "2": "z-index",
+  "3": "height",
+  "4": "left",
+  "5": "width",
+  "6": "background-color",
+  "7": "box-shadow",
+  "8": "position",
+  "9": "transition",
+  "_importants": Object {
+    "background-color": "",
+    "box-shadow": "",
+    "box-sizing": "",
+    "display": "",
+    "height": "",
+    "left": "",
+    "position": "",
+    "transition": "",
+    "visibility": undefined,
+    "width": "",
+    "z-index": "",
+  },
+  "_length": 11,
+  "_onChange": [Function],
+  "_values": Object {
+    "background-color": "rgb(2, 6, 53)",
+    "box-shadow": "0 0 15px 0 rgb(34 41 47 / 5%)",
+    "box-sizing": "inherit",
+    "display": "block",
+    "height": "100vh",
+    "left": "0px",
+    "position": "fixed",
+    "transition": "width 0.2s ease",
+    "visibility": "visible",
+    "width": "260px",
+    "z-index": "1031",
+  },
+}
+`;
+
+exports[`Sidebar sidebar render correctly not expanded 1`] = `
+CSSStyleDeclaration {
+  "0": "display",
+  "1": "box-sizing",
+  "10": "visibility",
+  "2": "z-index",
+  "3": "height",
+  "4": "left",
+  "5": "width",
+  "6": "background-color",
+  "7": "box-shadow",
+  "8": "position",
+  "9": "transition",
+  "_importants": Object {
+    "background-color": "",
+    "box-shadow": "",
+    "box-sizing": "",
+    "display": "",
+    "height": "",
+    "left": "",
+    "position": "",
+    "transition": "",
+    "visibility": undefined,
+    "width": "",
+    "z-index": "",
+  },
+  "_length": 11,
+  "_onChange": [Function],
+  "_values": Object {
+    "background-color": "rgb(2, 6, 53)",
+    "box-shadow": "0 0 15px 0 rgb(34 41 47 / 5%)",
+    "box-sizing": "inherit",
+    "display": "block",
+    "height": "100vh",
+    "left": "0px",
+    "position": "fixed",
+    "transition": "width 0.2s ease",
+    "visibility": "visible",
+    "width": "4.2em",
+    "z-index": "1031",
+  },
+}
+`;

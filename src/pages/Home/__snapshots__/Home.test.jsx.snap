@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home home render correctly 1`] = `
+<div
+  class="sc-iBaPrD gTSUvL"
+  data-testid="home-page"
+>
+  
+</div>
+`;
