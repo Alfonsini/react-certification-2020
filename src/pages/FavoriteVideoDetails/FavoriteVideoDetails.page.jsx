@@ -16,36 +16,24 @@ import {
   StyledRow,
   TitleP,
   VideoSection,
-} from './VideoDetails.styles';
+} from './FavoriteVideoDetails.styles';
 
 import RelatedVideo from '../../components/RelatedVideo';
-import { useFavoriteVideos, useFetch } from '../../utils/hooks';
-
-const PART = 'snippet';
-const MAX_RESULTS = 25;
-const ORDER = 'rating';
-const TYPE = 'video';
+import { useFavoriteVideos } from '../../utils/hooks';
 
 const CONTROLS = 1;
 const AUTOPLAY = 1;
 
-const BASEURL = `${process.env.REACT_APP_API_URL}?part=${PART}&maxResults=${MAX_RESULTS}&order=${ORDER}&type=${TYPE}&key=${process.env.REACT_APP_API_KEY}`;
-
-function VideoDetailsPage() {
+function FavoriteVideoDetailsPage() {
   const { state, dispatch } = useContext(VideoContext);
-  const { isFetching, data, errorMessage } = useFetch(
-    `${BASEURL}&relatedToVideoId=`,
-    state.currentVideoId
-  );
   const theme = useTheme();
   const { favoriteVideos, setFavoriteVideosValue } = useFavoriteVideos();
-
-  const [isFavorite, setIsFavorite] = useState(state.currentVideoIsFavorite);
+  const [isFavorite, setIsFavorite] = useState(true);
 
   const handleVideoClick = (id) => {
-    if (!data || !data.items) return;
+    if (!favoriteVideos || !favoriteVideos) return;
 
-    const videos = data.items.filter((v) => v.id.videoId === id);
+    const videos = favoriteVideos.filter((v) => v.id.videoId === id);
 
     if (!videos || videos.lenght === 0) return;
 
@@ -53,37 +41,28 @@ function VideoDetailsPage() {
 
     if (!video) return;
 
+    setIsFavorite(true);
+
     dispatch({
       type: 'SELECT_VIDEO',
       payload: {
         currentVideoId: id,
         currentVideoTitle: video.snippet.title,
         currentVideoDescription: video.snippet.description,
+        currentVideoIsFavorite: video.isFavorite,
       },
     });
   };
 
-  const handleChangeFavorite = (id) => {
-    if (!id) return;
+  const handleChangeFavorite = (ev) => {
+    ev.preventDefault();
+    if (!state.currentVideoId) return;
 
-    const video = state.videosList.items.filter((v) => v.id.videoId === id);
+    const videos = favoriteVideos.filter((v) => v.id.videoId !== state.currentVideoId);
 
-    if (video && video.length > 0) {
-      const index = state.videosList.items.indexOf(video[0]);
-      state.videosList.items[index].isFavorite = !state.videosList.items[index]
-        .isFavorite;
-
-      dispatch({ type: 'SET_VIDEOS', payload: { videosList: state.videosList } });
-
-      let videos = favoriteVideos;
-      if (state.videosList.items[index].isFavorite) {
-        videos = favoriteVideos.filter((v) => v.id.videoId !== id);
-      } else {
-        videos.push(video[0]);
-      }
-
+    if (videos) {
       setFavoriteVideosValue(videos);
-      setIsFavorite(!isFavorite);
+      setIsFavorite(false);
     }
   };
 
@@ -114,20 +93,18 @@ function VideoDetailsPage() {
             </DescriptionVideoDiv>
           </VideoSection>
         )}
-        {!isFetching && errorMessage && (
-          <span data-testid="error-msg">{errorMessage}</span>
-        )}
       </StyledCol>
       <StyledCol data-testid="related-videos" col={2}>
         <RelatedVideosSection>
-          {!isFetching && data && data.items && (
-            <RelatedTitleSectionP>You can also like</RelatedTitleSectionP>
+          {favoriteVideos && favoriteVideos.length > 1 && (
+            <RelatedTitleSectionP>Favorite list</RelatedTitleSectionP>
           )}
-          {!isFetching &&
-            data &&
-            data.items &&
-            data.items
-              .filter((v) => v.snippet && v.snippet.title)
+          {favoriteVideos &&
+            favoriteVideos
+              .filter(
+                (v) =>
+                  v.snippet && v.snippet.title && v.id.videoId !== state.currentVideoId
+              )
               .map((v) => (
                 <RelatedVideo
                   data-testid="related-video"
@@ -147,4 +124,4 @@ function VideoDetailsPage() {
   );
 }
 
-export default VideoDetailsPage;
+export default FavoriteVideoDetailsPage;

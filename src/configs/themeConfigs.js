@@ -18,6 +18,14 @@ export const lightTheme = {
 
   videoTitle: '#3d4055',
   videoDescription: '#3d4055',
+
+  buttonPrimary: '#7367f0',
+  buttonSecondary: '#82868b',
+
+  modalTitleText: '#5e5873',
+
+  favoriteVideo: '#ff9f43',
+  noFavoriteVideo: '#fff',
 };
 
 export const darkTheme = {
@@ -40,4 +48,12 @@ export const darkTheme = {
 
   videoTitle: '#b4b7bd',
   videoDescription: '#b4b7bd',
+
+  buttonPrimary: '#7367f0',
+  buttonSecondary: '#82868b',
+
+  modalTitleText: '#d0d2d6',
+
+  favoriteVideo: '#ff9f43',
+  noFavoriteVideo: '#fff',
 };

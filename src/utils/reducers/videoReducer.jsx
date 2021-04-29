@@ -26,6 +26,7 @@ const VideoReducer = (state, action) => {
         currentVideoId: action.payload.currentVideoId,
         currentVideoTitle: action.payload.currentVideoTitle,
         currentVideoDescription: action.payload.currentVideoDescription,
+        currentVideoIsFavorite: action.payload.currentVideoIsFavorite,
       };
     }
     case 'CLEAR': {

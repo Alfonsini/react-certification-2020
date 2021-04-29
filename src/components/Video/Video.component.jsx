@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { useTheme } from 'styled-components';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 import {
   ChannelNameA,
   ChannelNameMetaDiv,
   ClipDiv,
   MoreButton,
-  MoreButtonSvg,
-  MoreButtonSvgG,
-  MoreButtonSvgGPath,
+  // MoreButtonSvg,
+  // MoreButtonSvgG,
+  // MoreButtonSvgGPath,
   OverlayPreviewDiv,
   PlayIconDiv,
   PlayIconSvg,
@@ -33,8 +37,11 @@ function Video({
   time,
   publishedAt,
   onVideoClick,
+  isFavorite,
+  onChangeFavorite,
 }) {
   const [isCliphover, setIsClipHover] = useState(false);
+  const theme = useTheme();
 
   const handleHover = () => {
     setIsClipHover(!isCliphover);
@@ -117,7 +124,12 @@ function Video({
             </ChannelNameMetaDiv>
           </VideoFooter>
           <MoreButton type="button" isShowing={isCliphover ? 1 : 0}>
-            <MoreButtonSvg
+            <FontAwesomeIcon
+              icon={faStar}
+              color={isFavorite ? theme.favoriteVideo : theme.noFavoriteVideo}
+              onClick={() => onChangeFavorite(id)}
+            />
+            {/* <MoreButtonSvg
               viewBox="0 0 24 24"
               preserveAspectRatio="xMidYMid meet"
               focusable="false"
@@ -129,7 +141,7 @@ function Video({
                   isStyleScope
                 />
               </MoreButtonSvgG>
-            </MoreButtonSvg>
+            </MoreButtonSvg> */}
           </MoreButton>
         </SectionContentContainer>
       </ClipDiv>

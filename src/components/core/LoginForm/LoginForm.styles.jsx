@@ -1,37 +1,23 @@
 import styled from 'styled-components';
 
-const StyledDiv = styled.div`
-  position: relative;
-  border: none;
-  border-radius: 5px;
-  overflow: hidden;
-  display: none;
+const StyledFormControl = styled.form`
+  text-align: left;
+`;
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-    width: 500px;
-  }
-
-  @media screen and (min-width: 990px) {
-    display: flex;
-    width: 800px;
-  }
-
-  svg {
-    position: absolute;
-    right: 0;
-    margin: 0.6rem;
+const StyledFormGroup = styled.div`
+  :first-child {
+    margin-bottom: 20px;
   }
 `;
 
 const StyledInput = styled.input`
   border: none;
-  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+  padding: 0.7rem 1.5rem 0.7rem 0.7rem;
   flex: 1;
   outline: 0;
   border: solid ${(props) => props.theme.inputBorder};
   border-width: 1px;
-  border-radius: 30px;
+  border-radius: 0.357rem;
   width: 100%;
   height: 40px;
 
@@ -39,7 +25,7 @@ const StyledInput = styled.input`
   color: ${(props) => `${props.theme.text}`};
 
   font-weight: 400;
-  font-size: 13.3333px;
+  font-size: 13px;
   font-family: inherit;
 
   :placeholder {
@@ -76,6 +62,17 @@ const StyledInput = styled.input`
       transition: all 0.2s ease;
     }
   }
+
+  :not(::first-child) {
+    margin-bottom: 0.2857rem;
+  }
 `;
 
-export { StyledDiv, StyledInput };
+const StyledLabel = styled.label`
+  color: #5e5873;
+  font-size: 14px;
+  margin-bottom: 0.2857rem;
+  color: ${(props) => `${props.theme.text}`};
+`;
+
+export { StyledFormControl, StyledInput, StyledLabel, StyledFormGroup };
