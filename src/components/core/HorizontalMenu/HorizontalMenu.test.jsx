@@ -23,3 +23,4 @@ describe('HorizontalMenu', () => {
     expect(option).toMatchSnapshot();
   });
 });
+

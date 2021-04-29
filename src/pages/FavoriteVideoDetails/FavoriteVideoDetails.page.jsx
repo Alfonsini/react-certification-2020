@@ -67,7 +67,7 @@ function FavoriteVideoDetailsPage() {
   };
 
   return (
-    <StyledRow data-testid="video-details-page">
+    <StyledRow data-testid="favorite-video-details-page">
       <StyledCol col={4.5}>
         {state.currentVideoId && (
           <VideoSection>
