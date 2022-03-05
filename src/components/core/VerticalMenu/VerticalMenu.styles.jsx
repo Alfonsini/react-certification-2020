@@ -40,7 +40,7 @@ const StyledLi = styled.li`
     !props.expanded &&
     `
   a {
-    background: #292f78;
+    background: ${props.theme.backgroundSidebarOption};
     box-shadow: none;
   }
 `};

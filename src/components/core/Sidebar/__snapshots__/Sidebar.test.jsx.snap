@@ -2,18 +2,18 @@
 
 exports[`Sidebar sidebar render correctly 1`] = `
 <aside
-  class="sc-jrAGrp kldfbQ"
+  class="sc-kfzAmx fOBZnj"
   role="menubar"
 >
   <ul
-    class="sc-jSgupP kcqPqu"
+    class="sc-bkzZxe emqQXN"
     role="list"
   >
     <li
-      class="sc-gKsewC hGjNGk"
+      class="sc-idOhPF eNZqtm"
     >
       <a
-        class="sc-iBPRYJ RsQZo"
+        class="sc-dIUggk ExmPp"
         to="/"
       >
         <svg
@@ -32,7 +32,7 @@ exports[`Sidebar sidebar render correctly 1`] = `
           />
         </svg>
         <span
-          class="sc-pFZIQ coIxou"
+          class="sc-dmlrTW jbYabi"
         >
           Player
         </span>
@@ -40,17 +40,17 @@ exports[`Sidebar sidebar render correctly 1`] = `
     </li>
   </ul>
   <div
-    class="sc-kEjbxe iMKbgV"
+    class="sc-fKFyDc cUFtQH"
   />
   <ul
-    class="sc-bdfBwQ eGcbsb"
+    class="sc-bqyKva bqmuLh"
     role="list"
   >
     <li
-      class="sc-gsTCUz iUsqMz"
+      class="sc-kstrdz gLdZin"
     >
       <a
-        class="sc-dlfnbm hPocZh"
+        class="sc-hBEYos kXzggo"
         expanded="0"
         href="/"
       >
@@ -70,17 +70,17 @@ exports[`Sidebar sidebar render correctly 1`] = `
           />
         </svg>
         <span
-          class="sc-eCssSg jCnlqQ"
+          class="sc-fFubgz eLTNBw"
         >
           Home
         </span>
       </a>
     </li>
     <li
-      class="sc-gsTCUz jDzifl"
+      class="sc-kstrdz jNzLyt"
     >
       <a
-        class="sc-dlfnbm hPocZh"
+        class="sc-hBEYos kXzggo"
         expanded="0"
         href="/favorites"
       >
@@ -100,7 +100,7 @@ exports[`Sidebar sidebar render correctly 1`] = `
           />
         </svg>
         <span
-          class="sc-eCssSg jCnlqQ"
+          class="sc-fFubgz eLTNBw"
         >
           Favorites
         </span>
@@ -113,16 +113,20 @@ exports[`Sidebar sidebar render correctly 1`] = `
 exports[`Sidebar sidebar render correctly expanded 1`] = `
 CSSStyleDeclaration {
   "0": "display",
-  "1": "z-index",
-  "2": "height",
-  "3": "left",
-  "4": "width",
-  "5": "background-color",
-  "6": "position",
-  "7": "transition",
-  "8": "visibility",
+  "1": "box-sizing",
+  "10": "visibility",
+  "2": "z-index",
+  "3": "height",
+  "4": "left",
+  "5": "width",
+  "6": "background-color",
+  "7": "box-shadow",
+  "8": "position",
+  "9": "transition",
   "_importants": Object {
     "background-color": "",
+    "box-shadow": "",
+    "box-sizing": "",
     "display": "",
     "height": "",
     "left": "",
@@ -132,10 +136,12 @@ CSSStyleDeclaration {
     "width": "",
     "z-index": "",
   },
-  "_length": 9,
+  "_length": 11,
   "_onChange": [Function],
   "_values": Object {
     "background-color": "rgb(2, 6, 53)",
+    "box-shadow": "0 0 15px 0 rgb(34 41 47 / 5%)",
+    "box-sizing": "inherit",
     "display": "block",
     "height": "100vh",
     "left": "0px",
@@ -151,16 +157,20 @@ CSSStyleDeclaration {
 exports[`Sidebar sidebar render correctly not expanded 1`] = `
 CSSStyleDeclaration {
   "0": "display",
-  "1": "z-index",
-  "2": "height",
-  "3": "left",
-  "4": "width",
-  "5": "background-color",
-  "6": "position",
-  "7": "transition",
-  "8": "visibility",
+  "1": "box-sizing",
+  "10": "visibility",
+  "2": "z-index",
+  "3": "height",
+  "4": "left",
+  "5": "width",
+  "6": "background-color",
+  "7": "box-shadow",
+  "8": "position",
+  "9": "transition",
   "_importants": Object {
     "background-color": "",
+    "box-shadow": "",
+    "box-sizing": "",
     "display": "",
     "height": "",
     "left": "",
@@ -170,10 +180,12 @@ CSSStyleDeclaration {
     "width": "",
     "z-index": "",
   },
-  "_length": 9,
+  "_length": 11,
   "_onChange": [Function],
   "_values": Object {
     "background-color": "rgb(2, 6, 53)",
+    "box-shadow": "0 0 15px 0 rgb(34 41 47 / 5%)",
+    "box-sizing": "inherit",
     "display": "block",
     "height": "100vh",
     "left": "0px",

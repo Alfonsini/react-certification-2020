@@ -2,14 +2,14 @@
 
 exports[`VerticalMenu sidebar expanded 1`] = `
 <ul
-  class="sc-bdfBwQ eGcbsb"
+  class="sc-bqyKva bqmuLh"
   role="list"
 >
   <li
-    class="sc-gsTCUz hpjNcD"
+    class="sc-kstrdz gVIySj"
   >
     <a
-      class="sc-dlfnbm fvtZPP"
+      class="sc-hBEYos jXTJre"
       expanded="1"
       href="/"
     >
@@ -29,17 +29,17 @@ exports[`VerticalMenu sidebar expanded 1`] = `
         />
       </svg>
       <span
-        class="sc-eCssSg jCnlqQ"
+        class="sc-fFubgz eLTNBw"
       >
         Home
       </span>
     </a>
   </li>
   <li
-    class="sc-gsTCUz jDzifl"
+    class="sc-kstrdz jNzLyt"
   >
     <a
-      class="sc-dlfnbm fvtZPP"
+      class="sc-hBEYos jXTJre"
       expanded="1"
       href="/favorites"
     >
@@ -59,7 +59,7 @@ exports[`VerticalMenu sidebar expanded 1`] = `
         />
       </svg>
       <span
-        class="sc-eCssSg jCnlqQ"
+        class="sc-fFubgz eLTNBw"
       >
         Favorites
       </span>
@@ -70,14 +70,14 @@ exports[`VerticalMenu sidebar expanded 1`] = `
 
 exports[`VerticalMenu sidebar not expanded 1`] = `
 <ul
-  class="sc-bdfBwQ eGcbsb"
+  class="sc-bqyKva bqmuLh"
   role="list"
 >
   <li
-    class="sc-gsTCUz iUsqMz"
+    class="sc-kstrdz gLdZin"
   >
     <a
-      class="sc-dlfnbm hPocZh"
+      class="sc-hBEYos kXzggo"
       expanded="0"
       href="/"
     >
@@ -97,17 +97,17 @@ exports[`VerticalMenu sidebar not expanded 1`] = `
         />
       </svg>
       <span
-        class="sc-eCssSg jCnlqQ"
+        class="sc-fFubgz eLTNBw"
       >
         Home
       </span>
     </a>
   </li>
   <li
-    class="sc-gsTCUz jDzifl"
+    class="sc-kstrdz jNzLyt"
   >
     <a
-      class="sc-dlfnbm hPocZh"
+      class="sc-hBEYos kXzggo"
       expanded="0"
       href="/favorites"
     >
@@ -127,7 +127,7 @@ exports[`VerticalMenu sidebar not expanded 1`] = `
         />
       </svg>
       <span
-        class="sc-eCssSg jCnlqQ"
+        class="sc-fFubgz eLTNBw"
       >
         Favorites
       </span>

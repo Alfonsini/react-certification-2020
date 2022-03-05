@@ -2,11 +2,11 @@
 
 exports[`Search field render correctly 1`] = `
 <div
-  class="sc-kEjbxe fXdHsJ"
+  class="sc-crrsfI bfjlfM"
   data-testid="search-div"
 >
   <input
-    class="sc-iqHYGH kNdlqR"
+    class="sc-dQppl exSpxd"
     data-testid="search-input"
     name="search"
     placeholder="Search..."
@@ -15,10 +15,12 @@ exports[`Search field render correctly 1`] = `
   <svg
     aria-hidden="true"
     class="svg-inline--fa fa-search fa-w-16 "
+    color="#6e6b7b"
     data-icon="search"
     data-prefix="fas"
     data-testid="search-icon"
     focusable="false"
+    height="21px"
     role="img"
     viewBox="0 0 512 512"
     xmlns="http://www.w3.org/2000/svg"
@@ -35,10 +37,12 @@ exports[`Search field search icon in place 1`] = `
 <svg
   aria-hidden="true"
   class="svg-inline--fa fa-search fa-w-16 "
+  color="#6e6b7b"
   data-icon="search"
   data-prefix="fas"
   data-testid="search-icon"
   focusable="false"
+  height="21px"
   role="img"
   viewBox="0 0 512 512"
   xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,4 @@
-import React, { useState, useContext } from 'react';
-
-import { VideoListContext } from '../../utils/context/videoListContext';
+import React, { useState } from 'react';
 
 import {
   ChannelNameA,
@@ -34,10 +32,9 @@ function RelatedVideo({
   showTime = false,
   time,
   publishedAt,
-  handleSelectVideo,
+  onVideoClick,
 }) {
   const [isCliphover, setIsClipHover] = useState(false);
-  const { setVideoIdSelected } = useContext(VideoListContext);
 
   const handleHover = () => {
     setIsClipHover(!isCliphover);
@@ -73,11 +70,6 @@ function RelatedVideo({
     }
   };
 
-  const handleNavigateToVideo = async () => {
-    await setVideoIdSelected(id);
-    handleSelectVideo(id);
-  };
-
   return (
     <VideoSection data-testid="video-section">
       <ClipDiv
@@ -89,7 +81,7 @@ function RelatedVideo({
           data-testid="related-video-link"
           to="/video-details"
           id={`${id}`}
-          onClick={() => handleNavigateToVideo()}
+          onClick={() => onVideoClick(id)}
         >
           <SectionPreviewContainer>
             <PreviewContainerImg src={image} alt="" />

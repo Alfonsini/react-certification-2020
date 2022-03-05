@@ -5,7 +5,9 @@ const StyledAside = styled.aside`
   height: 100vh;
   left: 0;
   width: ${(props) => (props.expanded ? '260px' : '4.2em')};
-  background-color: #020635;
+  background-color: ${(props) => `${props.theme.backgroundColorSidebar}`};
+  box-shadow: 0 0 15px 0 rgb(34 41 47 / 5%);
+
   position: fixed;
   transition: width 0.2s ease;
 

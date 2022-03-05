@@ -2,7 +2,9 @@
 
 exports[`Home home render correctly 1`] = `
 <div
-  class="sc-gsTCUz fbApLv"
+  class="sc-cxFLnm cVTELZ"
   data-testid="home-page"
-/>
+>
+  
+</div>
 `;

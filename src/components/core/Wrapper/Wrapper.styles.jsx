@@ -5,15 +5,16 @@ const StyledWrapper = styled.main`
   left: 0;
   height: 100%;
 
-  margin-left: 80px;
+  margin-left: 85px;
   margin-right: 0px;
   margin-top: 10px;
 
   width: 100%;
-  background-color: #f6f5f7;
+  background-color: ${(props) => `${props.theme.backgroundColorWrapper}`};
+  box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
   border-radius: 0.428rem;
 
-  width: calc(100% - 90px);
+  width: calc(100% - 95px);
   height: calc(100% - 20px);
 
   @media screen and (max-width: 500px) {
