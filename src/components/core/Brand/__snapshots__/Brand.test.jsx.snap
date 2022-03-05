@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Brand sidebar expanded 1`] = `
+<ul
+  class="sc-bdfBwQ kyzaBV"
+  role="list"
+>
+  <li
+    class="sc-gsTCUz iVpTQG"
+  >
+    <a
+      class="sc-dlfnbm bXcrnn"
+      to="/"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-play fa-w-14 "
+        data-icon="play"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="sc-eCssSg jCnlqQ"
+      >
+        Player
+      </span>
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`Brand sidebar not expanded 1`] = `
+<ul
+  class="sc-bdfBwQ kyzaBV"
+  role="list"
+>
+  <li
+    class="sc-gsTCUz iVpTQG"
+  >
+    <a
+      class="sc-dlfnbm iJDBRt"
+      to="/"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-play fa-w-14 "
+        data-icon="play"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="sc-eCssSg jCnlqQ"
+      >
+        Player
+      </span>
+    </a>
+  </li>
+</ul>
+`;
