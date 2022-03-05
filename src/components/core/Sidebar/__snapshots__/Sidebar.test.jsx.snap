@@ -50,8 +50,9 @@ exports[`Sidebar sidebar render correctly 1`] = `
       class="sc-gsTCUz iUsqMz"
     >
       <a
-        class="sc-dlfnbm jsEzSa disabledCursor"
-        to="/"
+        class="sc-dlfnbm hPocZh"
+        expanded="0"
+        href="/"
       >
         <svg
           aria-hidden="true"
@@ -79,8 +80,9 @@ exports[`Sidebar sidebar render correctly 1`] = `
       class="sc-gsTCUz jDzifl"
     >
       <a
-        class="sc-dlfnbm jsEzSa disabledCursor"
-        to="/"
+        class="sc-dlfnbm hPocZh"
+        expanded="0"
+        href="/favorites"
       >
         <svg
           aria-hidden="true"
@@ -100,7 +102,7 @@ exports[`Sidebar sidebar render correctly 1`] = `
         <span
           class="sc-eCssSg jCnlqQ"
         >
-          Favorities
+          Favorites
         </span>
       </a>
     </li>
@@ -118,6 +120,7 @@ CSSStyleDeclaration {
   "5": "background-color",
   "6": "position",
   "7": "transition",
+  "8": "visibility",
   "_importants": Object {
     "background-color": "",
     "display": "",
@@ -125,10 +128,11 @@ CSSStyleDeclaration {
     "left": "",
     "position": "",
     "transition": "",
+    "visibility": undefined,
     "width": "",
     "z-index": "",
   },
-  "_length": 8,
+  "_length": 9,
   "_onChange": [Function],
   "_values": Object {
     "background-color": "rgb(2, 6, 53)",
@@ -137,6 +141,7 @@ CSSStyleDeclaration {
     "left": "0px",
     "position": "fixed",
     "transition": "width 0.2s ease",
+    "visibility": "visible",
     "width": "260px",
     "z-index": "1031",
   },
@@ -153,6 +158,7 @@ CSSStyleDeclaration {
   "5": "background-color",
   "6": "position",
   "7": "transition",
+  "8": "visibility",
   "_importants": Object {
     "background-color": "",
     "display": "",
@@ -160,10 +166,11 @@ CSSStyleDeclaration {
     "left": "",
     "position": "",
     "transition": "",
+    "visibility": undefined,
     "width": "",
     "z-index": "",
   },
-  "_length": 8,
+  "_length": 9,
   "_onChange": [Function],
   "_values": Object {
     "background-color": "rgb(2, 6, 53)",
@@ -172,6 +179,7 @@ CSSStyleDeclaration {
     "left": "0px",
     "position": "fixed",
     "transition": "width 0.2s ease",
+    "visibility": "visible",
     "width": "4.2em",
     "z-index": "1031",
   },

@@ -2,11 +2,11 @@
 
 exports[`Search field render correctly 1`] = `
 <div
-  class="sc-bdfBwQ hlgTBy"
-  data-testid="search-container"
+  class="sc-kEjbxe fXdHsJ"
+  data-testid="search-div"
 >
   <input
-    class="sc-gsTCUz CPuCb"
+    class="sc-iqHYGH kNdlqR"
     data-testid="search-input"
     name="search"
     placeholder="Search..."

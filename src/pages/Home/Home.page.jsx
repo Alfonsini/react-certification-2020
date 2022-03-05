@@ -1,42 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { StyledCol, StyledRow } from './Home.styles';
 
 import Video from '../../components/Video';
 
+import { useVideosAPI } from '../../utils/hooks/useVideosAPI';
+
 function HomePage() {
-  const [videoList, setVideoList] = useState([]);
-
-  async function getVideoList() {
-    try {
-      const response = await fetch(
-        'https://gist.githubusercontent.com/jparciga/1d4dd34fb06ba74237f8966e2e777ff5/raw/f3af25f1505deb67e2cc9ee625a633f24d8983ff/youtube-videos-mock.json'
-      );
-      const responseJson = await response.json();
-      return responseJson.items;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  useEffect(() => {
-    getVideoList().then((r) => {
-      setVideoList(r);
-    });
-  }, []);
+  const { videoList, isLoading, errorMessage } = useVideosAPI(null);
 
   return (
-    <StyledRow data-testid="row">
-      {videoList.slice(1).map((v) => (
-        <StyledCol key={v.id.videoId.toString()}>
-          <Video
-            id="nmXMgqjQzls"
-            title={v.snippet.title}
-            channelName={videoList[0].snippet.title}
-            image={v.snippet.thumbnails.medium.url}
-          />
-        </StyledCol>
-      ))}
+    <StyledRow data-testid="home-page">
+      {!isLoading &&
+        videoList &&
+        videoList.items &&
+        videoList.items.map((v) => (
+          <StyledCol key={v.id.videoId.toString()} data-testid="home-video-col">
+            <Video
+              id={v.id.videoId}
+              title={v.snippet.title}
+              channelId={v.snippet.channelId}
+              channelName={v.snippet.channelTitle}
+              image={v.snippet.thumbnails.medium.url}
+              publishedAt={v.snippet.publishedAt}
+            />
+          </StyledCol>
+        ))}
+      {!isLoading && errorMessage && <span data-testid="error-msg">{errorMessage}</span>}
     </StyledRow>
   );
 }

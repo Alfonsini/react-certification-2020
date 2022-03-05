@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledSearch = styled.div`
+const StyledDiv = styled.div`
   position: relative;
   border: none;
   border-radius: 5px;
@@ -41,4 +41,4 @@ const StyledInput = styled.input`
   }
 `;
 
-export { StyledSearch, StyledInput };
+export { StyledDiv, StyledInput };

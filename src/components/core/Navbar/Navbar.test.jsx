@@ -1,13 +1,11 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '../../../test/testUtils';
 
 import Navbar from '.';
 
 beforeEach(() => {
   render(<Navbar />);
 });
-
-afterEach(() => {});
 
 describe('Navbar', () => {
   test('render correctly', () => {

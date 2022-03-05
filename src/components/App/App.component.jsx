@@ -13,6 +13,10 @@ import BlankPage from '../core/BlankPage';
 
 import HomePage from '../../pages/Home';
 
+import { VideoListProvider } from '../../utils/context/videoListContext';
+
+import VideoDetailsPage from '../../pages/VideoDetails/VideoDetails.page';
+
 function App() {
   return (
     <BrowserRouter>
@@ -20,13 +24,26 @@ function App() {
         <Route exact path="/">
           <Sidebar />
           <Wrapper>
-            <Navbar />
-            <AppContent>
-              <HomePage />
-            </AppContent>
+            <VideoListProvider>
+              <Navbar />
+              <AppContent>
+                <HomePage />
+              </AppContent>
+            </VideoListProvider>
           </Wrapper>
         </Route>
-        <Route exact path="/not-authorized">
+        <Route exact path="/video-details">
+          <Sidebar />
+          <Wrapper>
+            <VideoListProvider>
+              <Navbar />
+              <AppContent>
+                <VideoDetailsPage />
+              </AppContent>
+            </VideoListProvider>
+          </Wrapper>
+        </Route>
+        <Route exact path="/#not-authorized">
           <Sidebar />
           <Wrapper>
             <Navbar />

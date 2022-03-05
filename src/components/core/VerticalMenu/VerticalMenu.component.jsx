@@ -9,15 +9,15 @@ function VerticalMenu(props) {
   return (
     <StyledUl role="list">
       <StyledLi expanded={props.expanded} active>
-        <StyledLink to="/" expanded={props.expanded} className="disabledCursor">
+        <StyledLink to="/" expanded={props.expanded ? 1 : 0}>
           <FontAwesomeIcon icon={faHome} />
           <StyledLinkTitle textTruncate>Home</StyledLinkTitle>
         </StyledLink>
       </StyledLi>
       <StyledLi expanded={props.expanded}>
-        <StyledLink to="/" expanded={props.expanded} className="disabledCursor">
+        <StyledLink to="/favorites" expanded={props.expanded ? 1 : 0}>
           <FontAwesomeIcon icon={faStar} />
-          <StyledLinkTitle textTruncate>Favorities</StyledLinkTitle>
+          <StyledLinkTitle textTruncate>Favorites</StyledLinkTitle>
         </StyledLink>
       </StyledLi>
     </StyledUl>

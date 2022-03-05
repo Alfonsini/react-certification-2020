@@ -1,9 +1,10 @@
 import React from 'react';
 
 import './AppContent.styles.css';
+import { AppContentDiv } from './AppContent.styles';
 
 function AppContent({ children }) {
-  return <div className="app-content scroll ">{children}</div>;
+  return <AppContentDiv className="app-content scroll ">{children}</AppContentDiv>;
 }
 
 export default AppContent;

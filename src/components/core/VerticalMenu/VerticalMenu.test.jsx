@@ -1,11 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test/testUtils';
 
 import VerticalMenu from '.';
-
-beforeEach(() => {});
-
-afterEach(() => {});
 
 describe('VerticalMenu', () => {
   test('sidebar not expanded', () => {
@@ -20,5 +16,17 @@ describe('VerticalMenu', () => {
 
     const aside = screen.getByRole('list');
     expect(aside).toMatchSnapshot();
+  });
+
+  test('home is available', () => {
+    render(<VerticalMenu />);
+    const option = screen.getByText('Home');
+    expect(option).toBeInTheDocument();
+  });
+
+  test('favorites is available', () => {
+    render(<VerticalMenu />);
+    const option = screen.getByText('Favorites');
+    expect(option).toBeInTheDocument();
   });
 });

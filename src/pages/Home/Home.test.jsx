@@ -1,17 +1,13 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../test/testUtils';
 
-import Home from '.';
-
-beforeEach(() => {
-  render(<Home />);
-});
-
-afterEach(() => {});
+import HomePage from '.';
 
 describe('Home', () => {
-  test('home render correctly', async () => {
-    const aside = screen.getByTestId('row');
-    expect(aside).toMatchSnapshot();
+  test('home render correctly', () => {
+    render(<HomePage />);
+    const row = screen.getByTestId('home-page');
+    expect(row).toBeInTheDocument();
+    expect(row).toMatchSnapshot();
   });
 });

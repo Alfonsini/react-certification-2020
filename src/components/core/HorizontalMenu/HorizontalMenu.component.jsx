@@ -6,12 +6,12 @@ function MenuHorizontal() {
   return (
     <StyledUl role="menu">
       <StyledLi>
-        <StyledLink to="/" className="disabledCursor">
+        <StyledLink to="/">
           <StyledLinkTitle textTruncate>Home</StyledLinkTitle>
         </StyledLink>
       </StyledLi>
       <StyledLi>
-        <StyledLink to="/" className="disabledCursor">
+        <StyledLink to="/favorites">
           <StyledLinkTitle textTruncate>Favorites</StyledLinkTitle>
         </StyledLink>
       </StyledLi>

@@ -3,3 +3,16 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect';
+
+import { server } from './test/server';
+
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '.env.test') });
+
+beforeAll(() => {
+  server.listen({ onUnhandledRequest: 'warn' });
+});
+afterEach(() => {
+  server.resetHandlers();
+});
+afterAll(() => server.close());

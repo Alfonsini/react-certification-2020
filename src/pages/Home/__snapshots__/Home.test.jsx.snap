@@ -2,7 +2,7 @@
 
 exports[`Home home render correctly 1`] = `
 <div
-  class="sc-gsTCUz hrCCWz"
-  data-testid="row"
+  class="sc-gsTCUz fbApLv"
+  data-testid="home-page"
 />
 `;

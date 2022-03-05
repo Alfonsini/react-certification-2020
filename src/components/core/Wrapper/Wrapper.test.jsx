@@ -1,16 +1,12 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test/testUtils';
 
 import Wrapper from '.';
-
-beforeEach(() => {});
-
-afterEach(() => {});
 
 describe('Wrapper', () => {
   test('wrapper render correctly', () => {
     render(<Wrapper />);
     const aside = screen.getByRole('main');
-    expect(aside).toMatchSnapshot();
+    expect(aside).toBeInTheDocument();
   });
 });

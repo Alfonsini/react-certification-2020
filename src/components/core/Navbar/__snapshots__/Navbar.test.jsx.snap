@@ -13,8 +13,8 @@ exports[`Navbar menu is in place 1`] = `
       class="sc-gsTCUz fXCZoy"
     >
       <a
-        class="sc-dlfnbm gWYOlF disabledCursor"
-        to="/"
+        class="sc-dlfnbm gWYOlF"
+        href="/"
       >
         <span
           class="sc-hKgILt fNqzIf"
@@ -27,8 +27,8 @@ exports[`Navbar menu is in place 1`] = `
       class="sc-gsTCUz fXCZoy"
     >
       <a
-        class="sc-dlfnbm gWYOlF disabledCursor"
-        to="/"
+        class="sc-dlfnbm gWYOlF"
+        href="/favorites"
       >
         <span
           class="sc-hKgILt fNqzIf"
@@ -54,8 +54,8 @@ exports[`Navbar menu when visible 1`] = `
       class="sc-gsTCUz fXCZoy"
     >
       <a
-        class="sc-dlfnbm gWYOlF disabledCursor"
-        to="/"
+        class="sc-dlfnbm gWYOlF"
+        href="/"
       >
         <span
           class="sc-hKgILt fNqzIf"
@@ -68,8 +68,8 @@ exports[`Navbar menu when visible 1`] = `
       class="sc-gsTCUz fXCZoy"
     >
       <a
-        class="sc-dlfnbm gWYOlF disabledCursor"
-        to="/"
+        class="sc-dlfnbm gWYOlF"
+        href="/favorites"
       >
         <span
           class="sc-hKgILt fNqzIf"
@@ -115,7 +115,7 @@ exports[`Navbar render correctly 1`] = `
     >
       <div
         class="sc-kEjbxe fXdHsJ"
-        data-testid="search-container"
+        data-testid="search-div"
       >
         <input
           class="sc-iqHYGH kNdlqR"

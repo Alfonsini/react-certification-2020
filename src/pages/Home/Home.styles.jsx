@@ -13,7 +13,7 @@ const StyledRow = styled.div`
   right: 0;
 
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: left;
   flex-flow: column;
   flex-direction: row;
