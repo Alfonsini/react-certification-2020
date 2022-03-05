@@ -38,6 +38,10 @@ const StyledInput = styled.input`
   background-color: ${(props) => `${props.theme.backgroundColorWrapper}`};
   color: ${(props) => `${props.theme.text}`};
 
+  font-weight: 400;
+  font-size: 13.3333px;
+  font-family: inherit;
+
   :placeholder {
     color: #b6b8bf;
     opacity: 1; /* Firefox */
@@ -46,6 +50,31 @@ const StyledInput = styled.input`
   :focus {
     border: solid ${(props) => props.theme.inputBorderFocus};
     border-width: 1px;
+
+    ::-webkit-input-placeholder {
+      /* WebKit browsers */
+      padding-left: 0.2rem;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+    :-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      padding-left: 0.2rem;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+    ::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      padding-left: 0.2rem;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+    :-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      padding-left: 0.2rem;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
   }
 `;
 

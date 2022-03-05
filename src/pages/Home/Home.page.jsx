@@ -6,10 +6,12 @@ import { StyledCol, StyledRow } from './Home.styles';
 import Video from '../../components/Video';
 
 import { VideoContext } from '../../providers/Videos';
+import { useFavoriteVideos } from '../../utils/hooks';
 
 function HomePage() {
   const { state, dispatch } = useContext(VideoContext);
   const history = useHistory();
+  const { favoriteVideos, setFavoriteVideosValue } = useFavoriteVideos();
 
   const handleVideoClick = async (id) => {
     const video = state.videosList.items.filter((v) => v.id.videoId === id)[0];
@@ -22,10 +24,34 @@ function HomePage() {
         currentVideoId: id,
         currentVideoTitle: video.snippet.title,
         currentVideoDescription: video.snippet.description,
+        currentVideoIsFavorite: video.isFavorite,
       },
     });
 
     history.push('/video-details');
+  };
+
+  const handleChangeFavorite = (id) => {
+    if (!id) return;
+
+    const video = state.videosList.items.filter((v) => v.id.videoId === id);
+
+    if (video && video.length > 0) {
+      const index = state.videosList.items.indexOf(video[0]);
+      state.videosList.items[index].isFavorite = !state.videosList.items[index]
+        .isFavorite;
+
+      dispatch({ type: 'SET_VIDEOS', payload: { videosList: state.videosList } });
+
+      let videos = favoriteVideos;
+      if (state.videosList.items[index].isFavorite) {
+        videos.push(video[0]);
+      } else {
+        videos = favoriteVideos.filter((v) => v.id.videoId !== id);
+      }
+
+      setFavoriteVideosValue(videos);
+    }
   };
 
   return (
@@ -43,6 +69,8 @@ function HomePage() {
               image={v.snippet.thumbnails.medium.url}
               publishedAt={v.snippet.publishedAt}
               onVideoClick={handleVideoClick}
+              isFavorite={v.isFavorite}
+              onChangeFavorite={handleChangeFavorite}
             />
           </StyledCol>
         ))}

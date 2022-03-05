@@ -23,10 +23,4 @@ describe('VerticalMenu', () => {
     const option = screen.getByText('Home');
     expect(option).toBeInTheDocument();
   });
-
-  test('favorites is available', () => {
-    render(<VerticalMenu />);
-    const option = screen.getByText('Favorites');
-    expect(option).toBeInTheDocument();
-  });
 });

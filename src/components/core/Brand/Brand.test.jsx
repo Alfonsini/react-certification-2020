@@ -18,3 +18,4 @@ describe('Brand', () => {
     expect(aside).toMatchSnapshot();
   });
 });
+

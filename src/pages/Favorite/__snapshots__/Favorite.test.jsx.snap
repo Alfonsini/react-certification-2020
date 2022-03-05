@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorite Favorite render correctly 1`] = `
+<div
+  class="sc-iBaPrD gTSUvL"
+  data-testid="favorite-page"
+/>
+`;

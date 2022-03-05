@@ -79,9 +79,12 @@ function RelatedVideo({
       >
         <VideoLink
           data-testid="related-video-link"
-          to="/video-details"
+          to="/"
           id={`${id}`}
-          onClick={() => onVideoClick(id)}
+          onClick={(ev) => {
+            ev.preventDefault();
+            onVideoClick(id);
+          }}
         >
           <SectionPreviewContainer>
             <PreviewContainerImg src={image} alt="" />

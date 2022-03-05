@@ -8,7 +8,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { VideoContext } from '../../../providers/Videos';
 import { StyledDiv, StyledInput } from './SearchForm.styles';
 
-import { useFetch } from '../../../utils/hooks';
+import { useFavoriteVideos, useFetch } from '../../../utils/hooks';
 
 const PART = 'snippet';
 const MAX_RESULTS = 25;
@@ -26,6 +26,7 @@ function SearchForm() {
   const { isFetching, data, errorMessage } = useFetch(`${BASEURL}&q=`, query);
   const { state, dispatch } = useContext(VideoContext);
 
+  const { favoriteVideos } = useFavoriteVideos();
   const theme = useTheme();
 
   useEffect(() => {
@@ -38,11 +39,29 @@ function SearchForm() {
 
   useEffect(() => {
     const update = () => {
+      if (data && data.items) {
+        const indexes = [];
+        favoriteVideos.forEach((v) => {
+          indexes.push(v.id.videoId);
+        });
+
+        for (let i = 0; i < data.items.length; i += 1) {
+          if (
+            data.items[i].id &&
+            data.items[i].id.videoId &&
+            indexes.includes(data.items[i].id.videoId)
+          ) {
+            data.items[i].isFavorite = true;
+          } else {
+            data.items[i].isFavorite = false;
+          }
+        }
+      }
       dispatch({ type: 'SET_VIDEOS', payload: { videosList: data } });
     };
 
     update();
-  }, [data, dispatch]);
+  }, [data, dispatch, favoriteVideos]);
 
   useEffect(() => {
     const update = () => {
@@ -69,9 +88,9 @@ function SearchForm() {
       }
     } else if (e.key === 'Backspace') {
       if (e.target.value === '' && !state.isLoading) {
-        setQuery('');
-        dispatch({ type: 'CLEAR' });
-        if (location.pathname !== '/') {
+        if (location.pathname === '/') {
+          setQuery('');
+          dispatch({ type: 'CLEAR' });
           history.push('/');
         }
       }

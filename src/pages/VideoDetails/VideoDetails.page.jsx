@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { useTheme } from 'styled-components';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 import { VideoContext } from '../../providers/Videos';
 
 import {
   DescriptionVideoDiv,
   DescriptionP,
+  FavoriteButtonContainer,
   RelatedTitleSectionP,
   RelatedVideosSection,
   StyledCol,
@@ -14,7 +19,7 @@ import {
 } from './VideoDetails.styles';
 
 import RelatedVideo from '../../components/RelatedVideo';
-import { useFetch } from '../../utils/hooks';
+import { useFavoriteVideos, useFetch } from '../../utils/hooks';
 
 const PART = 'snippet';
 const MAX_RESULTS = 25;
@@ -32,11 +37,15 @@ function VideoDetailsPage() {
     `${BASEURL}&relatedToVideoId=`,
     state.currentVideoId
   );
+  const theme = useTheme();
+  const { favoriteVideos, setFavoriteVideosValue } = useFavoriteVideos();
+
+  const [isFavorite, setIsFavorite] = useState(state.currentVideoIsFavorite);
 
   const handleVideoClick = (id) => {
-    if (!state.videosList || !state.videosList.items) return;
+    if (!data || !data.items) return;
 
-    const videos = state.videosList.items.filter((v) => v.id.videoId === id);
+    const videos = data.items.filter((v) => v.id.videoId === id);
 
     if (!videos || videos.lenght === 0) return;
 
@@ -54,6 +63,30 @@ function VideoDetailsPage() {
     });
   };
 
+  const handleChangeFavorite = (id) => {
+    if (!id) return;
+
+    const video = state.videosList.items.filter((v) => v.id.videoId === id);
+
+    if (video && video.length > 0) {
+      const index = state.videosList.items.indexOf(video[0]);
+      state.videosList.items[index].isFavorite = !state.videosList.items[index]
+        .isFavorite;
+
+      dispatch({ type: 'SET_VIDEOS', payload: { videosList: state.videosList } });
+
+      let videos = favoriteVideos;
+      if (state.videosList.items[index].isFavorite) {
+        videos = favoriteVideos.filter((v) => v.id.videoId !== id);
+      } else {
+        videos.push(video[0]);
+      }
+
+      setFavoriteVideosValue(videos);
+      setIsFavorite(!isFavorite);
+    }
+  };
+
   return (
     <StyledRow data-testid="video-details-page">
       <StyledCol col={4.5}>
@@ -67,6 +100,13 @@ function VideoDetailsPage() {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             />
             <DescriptionVideoDiv>
+              <FavoriteButtonContainer>
+                <FontAwesomeIcon
+                  icon={faStar}
+                  color={isFavorite ? theme.favoriteVideo : theme.noFavoriteVideo}
+                  onClick={handleChangeFavorite}
+                />
+              </FavoriteButtonContainer>
               <TitleP>{state.currentVideoId && state.currentVideoTitle}</TitleP>
               <DescriptionP>
                 {state.currentVideoId && state.currentVideoDescription}

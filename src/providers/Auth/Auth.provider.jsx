@@ -15,6 +15,7 @@ function useAuth() {
 
 function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
+  const [userData, setUserData] = useState({});
 
   useEffect(() => {
     const lastAuthState = storage.get(AUTH_STORAGE_KEY);
@@ -23,18 +24,22 @@ function AuthProvider({ children }) {
     setAuthenticated(isAuthenticated);
   }, []);
 
-  const login = useCallback(() => {
+  const login = useCallback((data) => {
     setAuthenticated(true);
     storage.set(AUTH_STORAGE_KEY, true);
+
+    if (data) setUserData(data);
   }, []);
 
   const logout = useCallback(() => {
     setAuthenticated(false);
     storage.set(AUTH_STORAGE_KEY, false);
+
+    setUserData({});
   }, []);
 
   return (
-    <AuthContext.Provider value={{ login, logout, authenticated }}>
+    <AuthContext.Provider value={{ authenticated, login, logout, userData }}>
       {children}
     </AuthContext.Provider>
   );

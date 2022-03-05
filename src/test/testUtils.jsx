@@ -2,23 +2,26 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import { VideoContextProvider } from '../providers/Videos';
-import { ThemeContextProvider } from '../providers/Theme';
+import ThemeContextProvider from '../providers/Theme';
 import GlobalStyle from '../globalStyle';
 
 // Layouts
 import BlankLayout from '../components/Layouts/BlankLayout';
 import VerticalLayout from '../components/Layouts/VerticalLayout';
 import HorizontalLayout from '../components/Layouts/HorizontalLayout';
+import AuthProvider from '../providers/Auth';
 
 const customWrapper = ({ children }) => {
   return (
     <ThemeContextProvider>
       <GlobalStyle />
-      <BrowserRouter>
-        <Switch>
-          <VideoContextProvider>{children}</VideoContextProvider>
-        </Switch>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Switch>
+            <VideoContextProvider>{children}</VideoContextProvider>
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
     </ThemeContextProvider>
   );
 };
@@ -30,11 +33,13 @@ const customWrapperWithHorizontalLayout = ({ children }) => {
   return (
     <ThemeContextProvider>
       <GlobalStyle />
-      <BrowserRouter>
-        <Switch>
-          <Layouts.HorizontalLayout>{children}</Layouts.HorizontalLayout>
-        </Switch>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Switch>
+            <Layouts.HorizontalLayout>{children}</Layouts.HorizontalLayout>
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
     </ThemeContextProvider>
   );
 };

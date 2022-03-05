@@ -7,10 +7,10 @@ import { SKINS } from '../../utils/constants';
 import { useSkin } from '../../utils/hooks';
 
 const ThemeContextProvider = ({ children }) => {
-  const { skin, setValue } = useSkin();
+  const { skin, setSkinValue } = useSkin();
 
   return (
-    <ThemeContext.Provider value={{ skin, setValue }}>
+    <ThemeContext.Provider value={{ skin, setSkinValue }}>
       <ThemeProvider theme={skin === SKINS.Light ? lightTheme : darkTheme}>
         {children}
       </ThemeProvider>
@@ -18,4 +18,4 @@ const ThemeContextProvider = ({ children }) => {
   );
 };
 
-export { ThemeContextProvider };
+export default ThemeContextProvider;

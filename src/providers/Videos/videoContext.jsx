@@ -8,6 +8,7 @@ const initialState = {
   currentVideoId: '',
   currentVideoTitle: '',
   currentVideoDescription: '',
+  currentVideoIsFavorite: false,
 };
 
 const VideoContext = React.createContext(initialState);
